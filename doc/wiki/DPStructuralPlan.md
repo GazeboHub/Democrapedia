@@ -57,8 +57,8 @@ _(To Do)_
     * Note: [Docracy TOS Tracker](http://www.docracy.com/tos/changes),
       with [periodic RSS feed](http://www.docracy.com/tos/rss.rss) -
       specifically
-	    * [Data.gov Data Policy (Docracy view)](http://www.docracy.com/0mm6ntpt572/data-gov-data-policy-tos)
-		* [Data.gov Privacy Policy (Docracy view)](http://www.docracy.com/0umpb9wg5g4/data-gov-privacy-policy-tos)
+	    * [Data.gov Data Policy (Docracy view)](http://www.docracy.com/0mm6ntpt572/data-gov-data-policy-tos)([annotated](https://diigo.com/010rqs))
+		* [Data.gov Privacy Policy (Docracy view)](http://www.docracy.com/0umpb9wg5g4/data-gov-privacy-policy-tos)([annotated](https://diigo.com/010rqr))
 * Project Structure - Precedents: Observe, from Wkipedia, it's _[Wiki Project California](
 http://en.wikipedia.org/wiki/Wikipedia:WikiProject_California)_
 
