@@ -47,7 +47,7 @@ _(To Do)_
 * Survey the resources of the US Department of Treasury, SEC, and other federal agencies for public information with regards to establishment of publicly traded companies and NGOs. (The Moody/Mergesant profiles of publicy traded corporations, namely, may seem like an unlikely resource, but possibly consider those for reference with regards to specially focused ontologies and the public registry, in later works, after the development of the Demopedia core ontologies)
 * Survey the works of citizen-driven watchdog organizations for possible definition of service integration interfaces (cf. SoaML)
 * Begin developing a solid and comprehensive TOS and EULA framework
-  (cf. Docstoc, _viz._ ontologies of legal policy and legal practice,
+  (cf. [Docracy](http://www.docracy.com/), _viz._ ontologies of legal policy and legal practice,
   as discussed [at the Cornell University LI web log](http://blog.law.cornell.edu/voxpop/category/legal-ontologies/))
 * Incorporate (if taking that approach to the concept, must first develop a _corporate board_)
 * "Do that democracy thing"
