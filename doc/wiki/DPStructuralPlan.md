@@ -55,7 +55,10 @@ _(To Do)_
 * Before integrating any third-party web services and content into Demopedia, ensure that the integration is firtly backed by clear information about the _licensing policy_ of each such information service and any information provided from the same - as at time of initial service integration, and at any later time during a service's incorporation in Demopedia, such that the _licensing policy_ of the third-party service or its information may be updated at that later time (Consider, as regarding the design of Demopedia services and structure, developing a system of _consensus-oriented license review_, _license registration_ and _license update notification_, such that Demopedia staff may mutually review the license policies of third party information services and any updates to the same, concerning the initial integration and any continuing integration of said information and information services, within the Demopedia public knowledgebase.)
 * Ensure that Demopedia will be developed, consistently, with a reasonably concise and yet principally comprehensive legal policy (Note: No _manifestos_. Try to keep it politically neutral and - though the legal policy and other works within Demopedia structure and activity must be necessarily comprehensive and structured, in regards to pragmatic details - nonetheless, try to keep it pragmatically concise and pragmatically relevant to Demopedia principles and practice)
     * Note: [Docracy TOS Tracker](http://www.docracy.com/tos/changes),
-      with [periodic RSS feed](http://www.docracy.com/tos/rss.rss)
+      with [periodic RSS feed](http://www.docracy.com/tos/rss.rss) -
+      specifically
+	    * [Data.gov Data Policy (Docracy view)](http://www.docracy.com/0mm6ntpt572/data-gov-data-policy-tos)
+		* [Data.gov Privacy Policy (Docracy view)](http://www.docracy.com/0umpb9wg5g4/data-gov-privacy-policy-tos)
 * Project Structure - Precedents: Observe, from Wkipedia, it's _[Wiki Project California](
 http://en.wikipedia.org/wiki/Wikipedia:WikiProject_California)_
 
