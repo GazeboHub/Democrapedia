@@ -1,0 +1,61 @@
+Structural Plan - Demopedia
+===========================
+
+# Overview of Principles
+
+(Consult the work of Thomas Jefferson, if there may be any single work by that founding leader of the US Democracy, if there may be a work perhaps indicating whether an _accurately informed and world-aware population_ may be more principally able to fulfill the responsibilities and needs of a democratic society realized and defined by the population, possibly more able to engage in the continued maintenance and development of that democratic society, more than may be an uninformed or misinformed population, in a democratic society and her governmental, civic, and economic relations, internally and internationally. Secondly and commensurately, consider the _diversity_ of lines of cultural heritage, cultural events, and cultural narratives that define _the US experince_ in its whole, unabridged nature - not ignorant of the more principally challenging qualities of internal national history and of national practice, internally and internationally, and neither of the principled successes of US society, in the development of a principally democratic US, "In the now.")
+
+(Consider: In a world in which the work of social entrepreneurs plays an ever increasing role not only in the development of new modes of _value_ and goodwill, but possibly - though it may seem to be in a romantic sense, at least initially - possibly reminding people and reminding whole communities of the continued value of simple, humanitarian principles, even in a highly modernized and economically globalized society and broader world - simply, consider that n objective evaluation of the US democracy may precede an objective evaluation of the US economy, in terms of democratic value and value creation.)
+
+(Alternately, look for a nice, simple quote as to the nature of democracy)
+
+# Structural Plan for Demopedia Core Ontologies
+
+Demopedia - like as its inspiration, Chile's own _[Poderopedia][poderopedia]_ - will be structured around a simple set of core ontologies, including [FOAF][foaf]. 
+
+Conncering the use of the [Bio][bio-vocab] ontology, then in regards to the Demopedia information architecture, there may be a preference to develop a number of more _organization-centric_ core ontology models, wherein the concept of a _relation_ - rather than given s first-order class - may be modeled implicitly, as with object properties.  Should  a definition of a _Relation_ class be necessary in the design of the Demopedia core ontologies or any _derived works_, observe: Though the Demopedia core ontologies may themselves use object properties to denote _relations_ within the ontology model, _derived_ ontologies may likewise extend any one or more of the core _relation_ properties, providing OWL class definitions in those extensional ontologies, such thst any one or more of those class definitions would denote an _object property_ as a _superclass_, thus effectively drawing the _relation_ properties into the domain of OWL classes. This concept of _relation modeling with object properties_ is predicated on a goal of _designing the Demopedia information model as to provide a semantically and informationally accurate, objective, and politically neutral model of  public entities, official roles, and public events_, such as may be modeled in extension of the _Demopedia core ontologies_.
+
+The concept of the _core ontologies_ in Demopedia may be denoted as so: Those ontologies either previously defined (such as [SKOS][skos], [FOAF][foaf], and {FIXME: The 'time' ontology}) or developed as contributions to Demopedia, namely as to define a core information architecture for ontology data, within the Demopedia knowledge base. 
+
+
+# Structural Plan for Development of Demopedia Ontologies
+
+1. Ontology of the National Area and Federal Governmental Structure
+
+2. Ontology of State Areas and Governmental Structures
+
+3. Ontology of Counties, Metro Areas, Cities, and Townships
+
+4. Ontology of Outlying Regions
+
+* Guam, Phillipenes, other island regions
+* US activity in Antarctica (review resources published by the US State Department, regarding the continent, Antarctica, history of territorial claims, and contemporwry science research activities, keeping in mind the level of scientific international cooperation demonstrated there and perhaps analogously aboard the ISS)
+
+5. Ontology of Native American Reservations and Tribes 
+
+(National Atlas; BIA information resources; histories of treaties; official tribal resources online - respectful of tribal leaders' traditional views of knowledge and of tribal identity, of contemporary concerns of indigenous peoples, and of contemporary commerce and communication at tribal boundaries)
+
+# Bubliography
+
+_(To Do)_
+
+# Founder's Notes
+
+* As far as organizational management of Demopedia and her development, consider the new type of corporation recently instituted in the state of Delaware (policies, guidelines, details) - namely, Delaware' new _Public Benefit Corporation_ model - but see also, Wahington's _Social Purpose Corporation_ law, c.f [selections bookmarked and annotated at diigo](https://www.diigo.com/user/spchamp/%22Social%20Entrepreneurialism%22)
+* Consider Wikipedia, the free encyclopedia, as a perhaps more discursive and more broadly focused knowledge resource. Concerning the nature of existing work in extending Wikipedia with _Web 3.0_ technologies (as _viz a viz_ Dbpedia) observe those as possibly defining an interface for web service integration, with a focus in regards to OWL, SPARQL, and the topically focused Demopedia core ontologies
+* With regards to the _Structural Plan for Development of Demopedia Ontologies_, denoted in the previous, begin a survey of resources published by the US Library of Congress, the National Atlas, the US Census Bureau, the Congress, and any federal agencies that may assist in defining, for purpose of citizen information and review, the structure of the US federal bureaucracy.
+* Survey the resources of the US Department of Treasury, SEC, and other federal agencies for public information with regards to establishment of publicly traded companies and NGOs. (The Moody/Mergesant profiles of publicy traded corporations, namely, may seem like an unlikely resource, but possibly consider those for reference with regards to specially focused ontologies and the public registry, in later works, after the development of the Demopedia core ontologies)
+* Survey the works of citizen-driven watchdog organizations for possible definition of service integration interfaces (cf. SoaML)
+* Begin developing a solid and comprehensive TOS and EULA framework (cf. Docstoc, _viz._ ontologies of legal policy and legal practice)
+* Incorporate (if taking that approach to the concept, must first develop a _corporate board_) 
+* "Do that democracy thing"
+* Consider defining web-available _services_ and related SoaML _service models_ for public publication, such that those services may be (in a sense of service-oriented architecture) _consumed_ by other services functioning in _the public web_
+* Before integrating any third-party web services and content into Demopedia, ensure that the integration is firtly backed by clear information about the _licensing policy_ of each such information service and any information provided from the same - as at time of initial service integration, and at any later time during a service's incorporation in Demopedia, such that the _licensing policy_ of the third-party service or its information may be updated at that later time (Consider, as regarding the design of Demopedia services and structure, developing a system of _consensus-oriented license review_, _license registration_ and _license update notification_, such that Demopedia staff may mutually review the license policies of third party information services and any updates to the same, concerning the initial integration and any continuing integration of said information and information services, within the Demopedia public knowledgebase.)
+* Ensure that Demopedia will be developed, consistently, with a reasonably concise and yet principally comprehensive legal policy (Note: No _manifestos_. Try to keep it politically neutral and - though the legal policy and other works within Demopedia structure and activity must be necessarily comprehensive and structured, in regards to pragmatic details - nonetheless, try to keep it pragmatically concise and pragmatically relevant to Demopedia principles and practice)
+* Project Structure - Precedents: Observe, from Wkipedia, it's _[Wiki Project California](
+http://en.wikipedia.org/wiki/Wikipedia:WikiProject_California)_
+
+[poderopedia]: http://www.poderopedia.org/
+[foaf]: http://www.foaf-project.org/
+[bio-vocab]: http://vocab.org/bio/0.1/.html
+[skos]: http://www.w3.org/2004/02/skos/
