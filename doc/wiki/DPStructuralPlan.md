@@ -1,5 +1,5 @@
-Structural Plan - Demopedia
-===========================
+Structural Plan - Demopedia - Overiew
+=====================================
 
 # Overview of Principles
 
@@ -39,7 +39,7 @@ The concept of the _core ontologies_ in Demopedia may be denoted as so: Those on
 
 _(To Do)_
 
-# Founder's Notes
+# Misc. Notes
 
 * As far as organizational management of Demopedia and her development, consider the new type of corporation recently instituted in the state of Delaware (policies, guidelines, details) - namely, Delaware' new _Public Benefit Corporation_ model - but see also, Wahington's _Social Purpose Corporation_ law, c.f [selections bookmarked and annotated at diigo](https://www.diigo.com/user/spchamp/%22Social%20Entrepreneurialism%22)
 * Consider Wikipedia, the free encyclopedia, as a perhaps more discursive and more broadly focused knowledge resource. Concerning the nature of existing work in extending Wikipedia with _Web 3.0_ technologies (as _viz a viz_ Dbpedia) observe those as possibly defining an interface for web service integration, with a focus in regards to OWL, SPARQL, and the topically focused Demopedia core ontologies
