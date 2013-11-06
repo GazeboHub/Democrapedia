@@ -3,17 +3,25 @@ Structural Plan - Demopcrapedia - Overiew
 
 # Overview of Principles
 
-(Consult the work of Thomas Jefferson, if there may be any single work by that founding leader of the US Democracy, if there may be a work perhaps indicating whether an _accurately informed and world-aware population_ may be more principally able to fulfill the responsibilities and needs of a democratic society realized and defined by the population, possibly more able to engage in the continued maintenance and development of that democratic society, more than may be an uninformed or misinformed population, in a democratic society and her governmental, civic, and economic relations, internally and internationally. Secondly and commensurately, consider the _diversity_ of lines of cultural heritage, cultural events, and cultural narratives that define _the US experince_ in its whole, unabridged nature - not ignorant of the more principally challenging qualities of internal national history and of national practice, internally and internationally, and neither of the principled successes of US society, in the development of a principally democratic US, "In the now.")
+* Constitutional Democracy
+* Legally Public Information
 
-(Consider: In a world in which the work of social entrepreneurs plays an ever increasing role not only in the development of new modes of _value_ and goodwill, but possibly - though it may seem to be in a romantic sense, at least initially - possibly reminding people and reminding whole communities of the continued value of simple, humanitarian principles, even in a highly modernized and economically globalized society and broader world - simply, consider that n objective evaluation of the US democracy may precede an objective evaluation of the US economy, in terms of democratic value and value creation.)
+* Statistical Data
+* Structural Data
+* Presentational Work
 
-(Alternately, look for a nice, simple quote as to the nature of democracy)
+* Intended to start from a foundation of _no partisan agendas_, with regards to democratic principles and presentation of structural information
+* Inspired by Chile's own _[Poderopedia][poderopedia]_
 
 # Structural Plan for Demopedia Core Ontologies
 
-Demopedia - like as its inspiration, Chile's own _[Poderopedia][poderopedia]_ - will be structured around a simple set of core ontologies, including [FOAF][foaf].
+Demopedia will be structured around a simple set of core ontologies, including:
+* [FOAF][foaf]
+* [OWL-Time][owl-time]
+* [Vocab-Org][vocab-org]
+* [SKOS][skos]
 
-Conncering the use of the [Bio][bio-vocab] ontology, then in regards to the Demopedia information architecture, there may be a preference to develop a number of more _organization-centric_ core ontology models, wherein the concept of a _relation_ - rather than given s first-order class - may be modeled implicitly, as with object properties.  Should  a definition of a _Relation_ class be necessary in the design of the Demopedia core ontologies or any _derived works_, observe: Though the Demopedia core ontologies may themselves use object properties to denote _relations_ within the ontology model, _derived_ ontologies may likewise extend any one or more of the core _relation_ properties, providing OWL class definitions in those extensional ontologies, such thst any one or more of those class definitions would denote an _object property_ as a _superclass_, thus effectively drawing the _relation_ properties into the domain of OWL classes. This concept of _relation modeling with object properties_ is predicated on a goal of _designing the Demopedia information model as to provide a semantically and informationally accurate, objective, and politically neutral model of  public entities, official roles, and public events_, such as may be modeled in extension of the _Demopedia core ontologies_.
+Concering the use of the [Bio][bio-vocab] ontology, then in regards to the Demopedia information architecture, there may be a preference to develop a number of more _organization-centric_ core ontology models, wherein the concept of a _relation_ - rather than given s first-order class - may be modeled implicitly, as with object properties.  Should  a definition of a _Relation_ class be necessary in the design of the Demopedia core ontologies or any _derived works_, observe: Though the Demopedia core ontologies may themselves use object properties to denote _relations_ within the ontology model, _derived_ ontologies may likewise extend any one or more of the core _relation_ properties, providing OWL class definitions in those extensional ontologies, such thst any one or more of those class definitions would denote an _object property_ as a _superclass_, thus effectively drawing the _relation_ properties into the domain of OWL classes. This concept of _relation modeling with object properties_ is predicated on a goal of _designing the Demopedia information model as to provide a semantically and informationally accurate, objective, and politically neutral model of  public entities, official roles, and public events_, such as may be modeled in extension of the _Demopedia core ontologies_.
 
 The concept of the _core ontologies_ in Demopedia may be denoted as so: Those ontologies either previously defined (such as [SKOS][skos], [FOAF][foaf], and {FIXME: The 'time' ontology}) or developed as contributions to Demopedia, namely as to define a core information architecture for ontology data, within the Demopedia knowledge base.
 
@@ -65,3 +73,5 @@ _(To Do)_
 [foaf]: http://www.foaf-project.org/
 [bio-vocab]: http://vocab.org/bio/0.1/.html
 [skos]: http://www.w3.org/2004/02/skos/
+[owl-time]: http://www.w3.org/TR/owl-time/
+[vocab-org]: http://www.w3.org/TR/vocab-org/
