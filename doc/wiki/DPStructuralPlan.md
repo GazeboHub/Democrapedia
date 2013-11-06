@@ -1,4 +1,4 @@
-Structural Plan - Demopedia - Overiew
+Structural Plan - Demopcrapedia - Overiew
 =====================================
 
 # Overview of Principles
@@ -39,7 +39,7 @@ The concept of the _core ontologies_ in Demopedia may be denoted as so: Those on
 
 _(To Do)_
 
-# Misc. Notes
+# Other Notes
 
 * As far as organizational management of Demopedia and her development, consider the new type of corporation recently instituted in the state of Delaware (policies, guidelines, details) - namely, Delaware' new _Public Benefit Corporation_ model - but see also, Wahington's _Social Purpose Corporation_ law, c.f [selections bookmarked and annotated at diigo](https://www.diigo.com/user/spchamp/%22Social%20Entrepreneurialism%22)
 * Consider Wikipedia, the free encyclopedia, as a perhaps more discursive and more broadly focused knowledge resource. Concerning the nature of existing work in extending Wikipedia with _Web 3.0_ technologies (as _viz a viz_ Dbpedia) observe those as possibly defining an interface for web service integration, with a focus in regards to OWL, SPARQL, and the topically focused Demopedia core ontologies
@@ -59,8 +59,7 @@ _(To Do)_
       specifically
 	    * [Data.gov Data Policy (Docracy view)](http://www.docracy.com/0mm6ntpt572/data-gov-data-policy-tos)([annotated](https://diigo.com/010rqs))
 		* [Data.gov Privacy Policy (Docracy view)](http://www.docracy.com/0umpb9wg5g4/data-gov-privacy-policy-tos)([annotated](https://diigo.com/010rqr))
-* Project Structure - Precedents: Observe, from Wkipedia, it's _[Wiki Project California](
-http://en.wikipedia.org/wiki/Wikipedia:WikiProject_California)_
+
 
 [poderopedia]: http://www.poderopedia.org/
 [foaf]: http://www.foaf-project.org/
