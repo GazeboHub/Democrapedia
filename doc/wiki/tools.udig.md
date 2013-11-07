@@ -30,6 +30,14 @@ that provides some geoinformatics functionality via the open source
 * The following prerequisite packages _should_ be installed:
     * [`libjpeg62`][deb-libjpeg62] (nb. this is a dependency of the
       [`lsb-desktop`][deb-lsb-desktop] package)
+* Notice [libsoup2.4.1-: Problem with Eclipse and java][soup-eclipse-bug]
+ (cf. Eclipse platform version). For affected platforms, there may be
+ a workaround developed in regards to X.org or alternately VNC,
+ towards using a second machine on a network, such that the second
+ machine would not be running a platform affected with the issue. uDig
+ could be installed on the second machine, along with either _an X
+ server and an SSH server_ or alternately VNC, then used over the
+ network.
 
 [udig]: http://udig.refractions.net/
 [geotools]: http://geotools.org/
@@ -42,3 +50,4 @@ that provides some geoinformatics functionality via the open source
 [deb-java-common]: http://packages.debian.org/java-common
 [deb-libjpeg62]: http://packages.debian.org/libjpeg62
 [deb-lsb-desktop]: http://packages.debian.org/lsb-desktop
+[soup-eclipse-bug]: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=705420
