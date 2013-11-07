@@ -52,9 +52,9 @@ Concering the [Bio][bio-vocab] ontology:
 	  level of scientific international cooperation demonstrated on
 	  the Antarctic continent, as well as perhaps analogously aboard
 	  the ISS
-	      * US State Department publiations aout Antarctica include:
-			  * _[Antarctica, Country Specific Information](http://travel.state.gov/travel/cis_pa_tw/cis/cis_5173.html)_
-			  * _[Ocean and Polar Affairs - Antarctic](http://www.state.gov/e/oes/ocns/opa/c6528.htm)_
+        * US State Department publiations aout Antarctica include:
+            * _[Antarctica, Country Specific Information](http://travel.state.gov/travel/cis_pa_tw/cis/cis_5173.html)_
+            * _[Ocean and Polar Affairs - Antarctic](http://www.state.gov/e/oes/ocns/opa/c6528.htm)_
 
 5. Ontology of Native American Reservations and Tribes
 
