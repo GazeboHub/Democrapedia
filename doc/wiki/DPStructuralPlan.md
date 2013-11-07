@@ -26,32 +26,12 @@ Demopedia will be structured around a simple set of core ontologies, including:
 * [Vocab-Org][vocab-org]
 * [SKOS][skos]
 
-Concering the use of the [Bio][bio-vocab] ontology, then in regards to
-the Demopedia information architecture, there may be a preference to
-develop a number of more _organization-centric_ core ontology models,
-wherein the concept of a _relation_ - rather than given s first-order
-class - may be modeled implicitly, as with object properties.  Should
-a definition of a _Relation_ class be necessary in the design of the
-Demopedia core ontologies or any _derived works_, observe: Though the
-Demopedia core ontologies may themselves use object properties to
-denote _relations_ within the ontology model, _derived_ ontologies may
-likewise extend any one or more of the core _relation_ properties,
-providing OWL class definitions in those extensional ontologies, such
-thst any one or more of those class definitions would denote an
-_object property_ as a _superclass_, thus effectively drawing the
-_relation_ properties into the domain of OWL classes. This concept of
-_relation modeling with object properties_ is predicated on a goal of
-_designing the Demopedia information model as to provide a
-semantically and informationally accurate, objective, and politically
-neutral model of  public entities, official roles, and public events_,
-such as may be modeled in extension of the _Demopedia core
-ontologies_.
-
-The concept of the _core ontologies_ in Demopedia may be denoted as
-so: Those ontologies either previously defined (such as [SKOS][skos],
-[FOAF][foaf], and {FIXME: The 'time' ontology}) or developed as
-contributions to Demopedia, namely as to define a core information
-architecture for ontology data, within the Demopedia knowledge base.
+Concering the [Bio][bio-vocab] ontology:
+* The concept of a _relation_ - rather than given a first-order class
+  - may be modeled implicitly, as with OWL object properties
+* Formal specifications for _Org_([[Vocab-Org][vocab-org]]) and _Time_
+  ([[OWL-Time][owl-time]]) ontologies are available, and will be
+  preferred by the Democrapedia project
 
 
 # Structural Plan for Development of Demopedia Ontologies
@@ -65,11 +45,16 @@ architecture for ontology data, within the Demopedia knowledge base.
 4. Ontology of Outlying Regions
 
 * Guam, Phillipenes, other island regions
-* US activity in Antarctica (review resources published by the US
-  State Department, regarding the continent, Antarctica, history of
-  territorial claims, and contemporwry science research activities,
-  keeping in mind the level of scientific international cooperation
-  demonstrated there and perhaps analogously aboard the ISS)
+* US activity in Antarctica
+    * review resources published by the US State Department, regarding
+	  the continent, Antarctica, history of territorial claims, and
+	  contemporary science research activities, keeping in mind the
+	  level of scientific international cooperation demonstrated on
+	  the Antarctic continent, as well as perhaps analogously aboard
+	  the ISS
+	      * US State Department publiations aout Antarctica include:
+			  * _[Antarctica, Country Specific Information](http://travel.state.gov/travel/cis_pa_tw/cis/cis_5173.html)_
+			  * _[Ocean and Polar Affairs - Antarctic](http://www.state.gov/e/oes/ocns/opa/c6528.htm)_
 
 5. Ontology of Native American Reservations and Tribes
 
