@@ -20,7 +20,8 @@ Structural Plan - Demopcrapedia - Overiew
 
 # Structural Plan for Demopedia Core Ontologies
 
-Demopedia will be structured around a simple set of core ontologies, including:
+Demopedia will be structured around a simple set of core ontologies,
+including:
 * [FOAF][foaf]
 * [OWL-Time][owl-time]
 * [Vocab-Org][vocab-org]
@@ -47,14 +48,14 @@ Concering the [Bio][bio-vocab] ontology:
 * Guam, Phillipenes, other island regions
 * US activity in Antarctica
     * review resources published by the US State Department, regarding
-	  the continent, Antarctica, history of territorial claims, and
-	  contemporary science research activities, keeping in mind the
-	  level of scientific international cooperation demonstrated on
-	  the Antarctic continent, as well as perhaps analogously aboard
-	  the ISS
-	      * US State Department publiations aout Antarctica include:
-			  * _[Antarctica, Country Specific Information](http://travel.state.gov/travel/cis_pa_tw/cis/cis_5173.html)_
-			  * _[Ocean and Polar Affairs - Antarctic](http://www.state.gov/e/oes/ocns/opa/c6528.htm)_
+      the continent, Antarctica, history of territorial claims, and
+      contemporary science research activities, keeping in mind the
+      level of scientific international cooperation demonstrated on
+      the Antarctic continent, as well as perhaps analogously aboard
+      the ISS
+            * US State Department publiations aout Antarctica include:
+                * _[Antarctica, Country Specific Information](http://travel.state.gov/travel/cis_pa_tw/cis/cis_5173.html)_
+                * _[Ocean and Polar Affairs - Antarctic](http://www.state.gov/e/oes/ocns/opa/c6528.htm)_
 
 5. Ontology of Native American Reservations and Tribes
 
@@ -137,8 +138,8 @@ _(To Do)_
     * Note: [Docracy TOS Tracker](http://www.docracy.com/tos/changes),
       with [periodic RSS feed](http://www.docracy.com/tos/rss.rss) -
       specifically
-	    * [Data.gov Data Policy (Docracy view)](http://www.docracy.com/0mm6ntpt572/data-gov-data-policy-tos)([annotated](https://diigo.com/010rqs))
-		* [Data.gov Privacy Policy (Docracy view)](http://www.docracy.com/0umpb9wg5g4/data-gov-privacy-policy-tos)([annotated](https://diigo.com/010rqr))
+            * [Data.gov Data Policy (Docracy view)](http://www.docracy.com/0mm6ntpt572/data-gov-data-policy-tos)([annotated](https://diigo.com/010rqs))
+                * [Data.gov Privacy Policy (Docracy view)](http://www.docracy.com/0umpb9wg5g4/data-gov-privacy-policy-tos)([annotated](https://diigo.com/010rqr))
 
 
 [poderopedia]: http://www.poderopedia.org/
