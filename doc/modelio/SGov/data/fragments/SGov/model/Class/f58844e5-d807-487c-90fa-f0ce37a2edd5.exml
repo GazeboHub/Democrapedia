@@ -3,6 +3,7 @@
   <DEPS>
     <ID name="FederalLegislativeInstitution" mc="Class" uid="f58844e5-d807-487c-90fa-f0ce37a2edd5"/>
     <EXTID name="FederalInstitution" mc="Class" uid="a43d1405-6b91-4697-a341-17e8954ccde4"/>
+    <EXTID name="LegislativeInstitution" mc="Class" uid="0bb08c62-da17-4612-81bc-219515bc5075"/>
   </DEPS>
   <OBJECT>
     <ID name="FederalLegislativeInstitution" mc="Class" uid="f58844e5-d807-487c-90fa-f0ce37a2edd5"/>
@@ -31,6 +32,20 @@
           <DEPENDENCIES>
             <LINK relation="SuperType">
               <ID name="FederalInstitution" mc="Class" uid="a43d1405-6b91-4697-a341-17e8954ccde4"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="b7663951-a97c-46af-b6c1-b2ff6b30918d"/>
+          <PID name="FederalLegislativeInstitution" mc="Class" uid="f58844e5-d807-487c-90fa-f0ce37a2edd5"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="LegislativeInstitution" mc="Class" uid="0bb08c62-da17-4612-81bc-219515bc5075"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
