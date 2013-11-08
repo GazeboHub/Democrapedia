@@ -13,7 +13,7 @@
       <ATT name="IsElementary">false</ATT>
       <ATT name="IsAbstract">false</ATT>
       <ATT name="IsLeaf">false</ATT>
-      <ATT name="IsRoot">false</ATT>
+      <ATT name="IsRoot">true</ATT>
       <ATT name="Visibility">Public</ATT>
       <ATT name="Name"><![CDATA[LegislativeInstitution]]></ATT>
       <ATT name="status">1970354901745664</ATT>

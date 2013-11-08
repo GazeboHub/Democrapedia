@@ -9,7 +9,7 @@
   </DEPS>
   <OBJECT>
     <ID name="US" mc="Package" uid="f963d82a-090b-4172-8096-33fd1ac36dd1"/>
-    <PID name="regional" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
+    <PID name="nation" mc="Package" uid="bbffaed5-5147-4595-9c43-cbeb63551087"/>
     <ATTRIBUTES>
       <ATT name="IsInstantiable">false</ATT>
       <ATT name="IsAbstract">false</ATT>
