@@ -4,6 +4,7 @@
     <ID name="US" mc="Package" uid="f963d82a-090b-4172-8096-33fd1ac36dd1"/>
     <COMPID name="SGovFederalCore" mc="ClassDiagram" uid="dcd86c12-b967-4d99-91e9-6381a0273b22"/>
     <COMPID name="SGovFederalExecutive" mc="ClassDiagram" uid="22737947-b21e-4c30-95d8-9b54a74ee52d"/>
+    <COMPID name="SGovFederalJudicial" mc="ClassDiagram" uid="0faaba72-4e56-4c0d-b980-8000fe85b56b"/>
     <COMPID name="SGovFederalLegislative" mc="ClassDiagram" uid="98b92475-deaa-47c0-bab9-0a4e39c3e3b4"/>
   </DEPS>
   <OBJECT>
@@ -23,6 +24,7 @@
         <COMPID name="SGovFederalCore" mc="ClassDiagram" uid="dcd86c12-b967-4d99-91e9-6381a0273b22"/>
         <COMPID name="SGovFederalExecutive" mc="ClassDiagram" uid="22737947-b21e-4c30-95d8-9b54a74ee52d"/>
         <COMPID name="SGovFederalLegislative" mc="ClassDiagram" uid="98b92475-deaa-47c0-bab9-0a4e39c3e3b4"/>
+        <COMPID name="SGovFederalJudicial" mc="ClassDiagram" uid="0faaba72-4e56-4c0d-b980-8000fe85b56b"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>
