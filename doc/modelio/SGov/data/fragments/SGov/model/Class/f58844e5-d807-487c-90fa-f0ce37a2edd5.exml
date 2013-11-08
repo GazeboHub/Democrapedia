@@ -6,7 +6,7 @@
   </DEPS>
   <OBJECT>
     <ID name="FederalLegislativeInstitution" mc="Class" uid="f58844e5-d807-487c-90fa-f0ce37a2edd5"/>
-    <PID name="federal" mc="Package" uid="989431c0-e0e9-4bd4-a453-af0741dffb56"/>
+    <PID name="legislative" mc="Package" uid="c687e96e-577f-449d-b0fe-50a4530e456e"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
       <ATT name="IsMain">false</ATT>

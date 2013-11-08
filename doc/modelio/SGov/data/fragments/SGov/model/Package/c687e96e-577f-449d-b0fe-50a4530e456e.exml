@@ -3,6 +3,7 @@
   <DEPS>
     <ID name="legislative" mc="Package" uid="c687e96e-577f-449d-b0fe-50a4530e456e"/>
     <COMPID name="Congress" mc="Class" uid="540eac6f-d2ab-4d58-b34c-202d4de852d6"/>
+    <COMPID name="FederalLegislativeInstitution" mc="Class" uid="f58844e5-d807-487c-90fa-f0ce37a2edd5"/>
   </DEPS>
   <OBJECT>
     <ID name="legislative" mc="Package" uid="c687e96e-577f-449d-b0fe-50a4530e456e"/>
@@ -19,6 +20,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
         <COMPID name="Congress" mc="Class" uid="540eac6f-d2ab-4d58-b34c-202d4de852d6"/>
+        <COMPID name="FederalLegislativeInstitution" mc="Class" uid="f58844e5-d807-487c-90fa-f0ce37a2edd5"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>

@@ -2,6 +2,7 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="executive" version="3">
   <DEPS>
     <ID name="executive" mc="Package" uid="f75457bf-3ee7-48da-98c7-2116aac7ea1d"/>
+    <COMPID name="FederalExecutiveInstitution" mc="Class" uid="6b34dfc0-85b9-44a4-abb0-9ba81af17269"/>
     <COMPID name="OfficePOTUS" mc="Class" uid="cf3d6c6b-eb2d-445a-813f-7b506803058d"/>
   </DEPS>
   <OBJECT>
@@ -19,6 +20,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
         <COMPID name="OfficePOTUS" mc="Class" uid="cf3d6c6b-eb2d-445a-813f-7b506803058d"/>
+        <COMPID name="FederalExecutiveInstitution" mc="Class" uid="6b34dfc0-85b9-44a4-abb0-9ba81af17269"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>

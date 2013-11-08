@@ -2,6 +2,7 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="judicial" version="3">
   <DEPS>
     <ID name="judicial" mc="Package" uid="57f995f2-0199-4d78-901d-fa07b58156f0"/>
+    <COMPID name="FederalJudicialInstitution" mc="Class" uid="4f288f73-cc47-408a-b67b-bf20a9f94a21"/>
     <COMPID name="SCOTUS" mc="Class" uid="c6d59ea0-244b-4d40-adff-2b00f515ee08"/>
   </DEPS>
   <OBJECT>
@@ -19,6 +20,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
         <COMPID name="SCOTUS" mc="Class" uid="c6d59ea0-244b-4d40-adff-2b00f515ee08"/>
+        <COMPID name="FederalJudicialInstitution" mc="Class" uid="4f288f73-cc47-408a-b67b-bf20a9f94a21"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>
