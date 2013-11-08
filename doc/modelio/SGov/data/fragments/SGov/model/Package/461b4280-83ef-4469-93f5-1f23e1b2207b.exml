@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="structural" version="3">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="struct" version="3">
   <DEPS>
-    <ID name="structural" mc="Package" uid="461b4280-83ef-4469-93f5-1f23e1b2207b"/>
+    <ID name="struct" mc="Package" uid="461b4280-83ef-4469-93f5-1f23e1b2207b"/>
     <COMPID name="GovernmentalCompliment" mc="Class" uid="9d96e3ac-9130-4d02-8676-ab4fd79506e9"/>
     <COMPID name="GovernmentalInstitution" mc="Class" uid="34799365-7e11-4ccb-80e6-fce10336db82"/>
     <COMPID name="executive" mc="Package" uid="cfd88c00-79df-4f7d-bc68-eba7dfdd7adf"/>
@@ -10,7 +10,7 @@
     <COMPID name="legislative" mc="Package" uid="68db7e7a-5077-44e9-85f6-9811044be145"/>
   </DEPS>
   <OBJECT>
-    <ID name="structural" mc="Package" uid="461b4280-83ef-4469-93f5-1f23e1b2207b"/>
+    <ID name="struct" mc="Package" uid="461b4280-83ef-4469-93f5-1f23e1b2207b"/>
     <PID name="core" mc="Package" uid="c51ae3a8-0a53-4d87-af24-da6400cd02b3"/>
     <ATTRIBUTES>
       <ATT name="IsInstantiable">false</ATT>
@@ -18,7 +18,7 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[structural]]></ATT>
+      <ATT name="Name"><![CDATA[struct]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
