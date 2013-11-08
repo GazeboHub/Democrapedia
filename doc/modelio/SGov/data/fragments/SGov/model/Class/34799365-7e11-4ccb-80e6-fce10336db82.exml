@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="GovernmentalInstitution" version="3">
+  <DEPS>
+    <ID name="GovernmentalInstitution" mc="Class" uid="34799365-7e11-4ccb-80e6-fce10336db82"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="GovernmentalInstitution" mc="Class" uid="34799365-7e11-4ccb-80e6-fce10336db82"/>
+    <PID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[GovernmentalInstitution]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

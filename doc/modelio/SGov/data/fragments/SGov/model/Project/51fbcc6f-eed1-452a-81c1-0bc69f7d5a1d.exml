@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="SGov" version="3">
+  <DEPS>
+    <ID name="SGov" mc="Project" uid="51fbcc6f-eed1-452a-81c1-0bc69f7d5a1d"/>
+    <COMPID name="SGov" mc="DiagramSet" uid="926a99b8-6bb6-4221-9862-7d642eb658d1"/>
+    <COMPID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="SGov" mc="Project" uid="51fbcc6f-eed1-452a-81c1-0bc69f7d5a1d"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[SGov]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="DiagramRoot">
+        <COMPID name="SGov" mc="DiagramSet" uid="926a99b8-6bb6-4221-9862-7d642eb658d1"/>
+      </COMP>
+      <COMP relation="Model">
+        <COMPID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

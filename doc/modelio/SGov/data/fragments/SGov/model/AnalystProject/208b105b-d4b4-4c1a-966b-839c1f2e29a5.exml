@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="SGov" version="3">
+  <DEPS>
+    <ID name="SGov" mc="AnalystProject" uid="208b105b-d4b4-4c1a-966b-839c1f2e29a5"/>
+    <COMPID name="SGov" mc="PropertyContainer" uid="b28f5d9c-2d0f-4f3b-b261-0c57f0115e60"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="SGov" mc="AnalystProject" uid="208b105b-d4b4-4c1a-966b-839c1f2e29a5"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[SGov]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="PropertyRoot">
+        <COMPID name="SGov" mc="PropertyContainer" uid="b28f5d9c-2d0f-4f3b-b261-0c57f0115e60"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

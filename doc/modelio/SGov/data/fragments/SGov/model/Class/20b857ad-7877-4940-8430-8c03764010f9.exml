@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Congress" version="3">
+  <DEPS>
+    <ID name="Congress" mc="Class" uid="20b857ad-7877-4940-8430-8c03764010f9"/>
+    <EXTID name="FederalInstitution" mc="Class" uid="a43d1405-6b91-4697-a341-17e8954ccde4"/>
+    <EXTID name="Legislature" mc="Class" uid="9a447783-13e3-4396-bf4d-4f09b552a830"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Congress" mc="Class" uid="20b857ad-7877-4940-8430-8c03764010f9"/>
+    <PID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Congress]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="7299e62f-18d2-4069-9752-a682eaf893cf"/>
+          <PID name="Congress" mc="Class" uid="20b857ad-7877-4940-8430-8c03764010f9"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="FederalInstitution" mc="Class" uid="a43d1405-6b91-4697-a341-17e8954ccde4"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="ed7b393f-12b4-4845-81ac-713e25b3a9eb"/>
+          <PID name="Congress" mc="Class" uid="20b857ad-7877-4940-8430-8c03764010f9"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="Legislature" mc="Class" uid="9a447783-13e3-4396-bf4d-4f09b552a830"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="SCOTUS" version="3">
+  <DEPS>
+    <ID name="SCOTUS" mc="Class" uid="9d2cf9ed-bb01-459b-b523-30e1d6bf3a28"/>
+    <EXTID name="Court" mc="Class" uid="1c475bfe-2559-40e5-97bd-bf1e16a115c4"/>
+    <EXTID name="FederalInstitution" mc="Class" uid="a43d1405-6b91-4697-a341-17e8954ccde4"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="SCOTUS" mc="Class" uid="9d2cf9ed-bb01-459b-b523-30e1d6bf3a28"/>
+    <PID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[SCOTUS]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="249963e3-44c6-41d9-b0be-55f76f2d1f61"/>
+          <PID name="SCOTUS" mc="Class" uid="9d2cf9ed-bb01-459b-b523-30e1d6bf3a28"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="FederalInstitution" mc="Class" uid="a43d1405-6b91-4697-a341-17e8954ccde4"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="10b06686-c83f-4c89-a8a8-c5f4eab7a2b5"/>
+          <PID name="SCOTUS" mc="Class" uid="9d2cf9ed-bb01-459b-b523-30e1d6bf3a28"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="Court" mc="Class" uid="1c475bfe-2559-40e5-97bd-bf1e16a115c4"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,40 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="JudicialInstitution" version="3">
+  <DEPS>
+    <ID name="JudicialInstitution" mc="Class" uid="671cc30b-158b-47e8-a903-8b3e0bc1fc2b"/>
+    <EXTID name="GovernmentalCompliment" mc="Class" uid="9d96e3ac-9130-4d02-8676-ab4fd79506e9"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="JudicialInstitution" mc="Class" uid="671cc30b-158b-47e8-a903-8b3e0bc1fc2b"/>
+    <PID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[JudicialInstitution]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="a21787c5-1075-44f4-ae94-1412bf9738d5"/>
+          <PID name="JudicialInstitution" mc="Class" uid="671cc30b-158b-47e8-a903-8b3e0bc1fc2b"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="GovernmentalCompliment" mc="Class" uid="9d96e3ac-9130-4d02-8676-ab4fd79506e9"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

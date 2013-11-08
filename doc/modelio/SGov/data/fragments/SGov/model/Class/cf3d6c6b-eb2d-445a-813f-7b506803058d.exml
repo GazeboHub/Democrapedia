@@ -1,0 +1,55 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="OfficePOTUS" version="3">
+  <DEPS>
+    <ID name="OfficePOTUS" mc="Class" uid="cf3d6c6b-eb2d-445a-813f-7b506803058d"/>
+    <EXTID name="CentralExecutiveOffice" mc="Class" uid="3eb5f017-e23f-427a-aa57-0456eeb77a2e"/>
+    <EXTID name="FederalInstitution" mc="Class" uid="a43d1405-6b91-4697-a341-17e8954ccde4"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="OfficePOTUS" mc="Class" uid="cf3d6c6b-eb2d-445a-813f-7b506803058d"/>
+    <PID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[OfficePOTUS]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="689f9b8b-25fe-4bf6-9a1b-dd8131c94fe3"/>
+          <PID name="OfficePOTUS" mc="Class" uid="cf3d6c6b-eb2d-445a-813f-7b506803058d"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="FederalInstitution" mc="Class" uid="a43d1405-6b91-4697-a341-17e8954ccde4"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="e0008a67-efe3-4a17-96ed-ae50bdab4a24"/>
+          <PID name="OfficePOTUS" mc="Class" uid="cf3d6c6b-eb2d-445a-813f-7b506803058d"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="CentralExecutiveOffice" mc="Class" uid="3eb5f017-e23f-427a-aa57-0456eeb77a2e"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

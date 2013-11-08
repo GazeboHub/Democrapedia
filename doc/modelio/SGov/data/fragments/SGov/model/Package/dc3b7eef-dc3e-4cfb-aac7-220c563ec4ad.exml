@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="sgov" version="3">
+  <DEPS>
+    <ID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+    <COMPID name="CentralExecutiveOffice" mc="Class" uid="3eb5f017-e23f-427a-aa57-0456eeb77a2e"/>
+    <COMPID name="Congress" mc="Class" uid="20b857ad-7877-4940-8430-8c03764010f9"/>
+    <COMPID name="Court" mc="Class" uid="1c475bfe-2559-40e5-97bd-bf1e16a115c4"/>
+    <COMPID name="ExecutiveDepartment" mc="Class" uid="620e1f51-c3af-4898-b959-f2772ecb0a49"/>
+    <COMPID name="ExecutiveInstitution" mc="Class" uid="4e1098f0-1659-408b-8063-7535112363f7"/>
+    <COMPID name="FederalInstitution" mc="Class" uid="a43d1405-6b91-4697-a341-17e8954ccde4"/>
+    <COMPID name="GovernmentalCompliment" mc="Class" uid="9d96e3ac-9130-4d02-8676-ab4fd79506e9"/>
+    <COMPID name="GovernmentalInstitution" mc="Class" uid="34799365-7e11-4ccb-80e6-fce10336db82"/>
+    <COMPID name="JudicialInstitution" mc="Class" uid="671cc30b-158b-47e8-a903-8b3e0bc1fc2b"/>
+    <COMPID name="LegislativeCommittee" mc="Class" uid="c3fad0a7-201c-459d-8f38-dde9d5bd64a6"/>
+    <COMPID name="LegislativeInstitution" mc="Class" uid="0bb08c62-da17-4612-81bc-219515bc5075"/>
+    <COMPID name="Legislature" mc="Class" uid="9a447783-13e3-4396-bf4d-4f09b552a830"/>
+    <COMPID name="OfficePOTUS" mc="Class" uid="cf3d6c6b-eb2d-445a-813f-7b506803058d"/>
+    <COMPID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
+    <COMPID name="SCOTUS" mc="Class" uid="9d2cf9ed-bb01-459b-b523-30e1d6bf3a28"/>
+    <COMPID name="SGovCore" mc="ClassDiagram" uid="dddf2efc-b668-4fb0-a3bc-5d47f656be2e"/>
+    <COMPID name="SGovFederal" mc="ClassDiagram" uid="dcd86c12-b967-4d99-91e9-6381a0273b22"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+    <PID name="SGov" mc="Project" uid="51fbcc6f-eed1-452a-81c1-0bc69f7d5a1d"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[sgov]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="GovernmentalInstitution" mc="Class" uid="34799365-7e11-4ccb-80e6-fce10336db82"/>
+        <COMPID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
+        <COMPID name="GovernmentalCompliment" mc="Class" uid="9d96e3ac-9130-4d02-8676-ab4fd79506e9"/>
+        <COMPID name="FederalInstitution" mc="Class" uid="a43d1405-6b91-4697-a341-17e8954ccde4"/>
+        <COMPID name="ExecutiveInstitution" mc="Class" uid="4e1098f0-1659-408b-8063-7535112363f7"/>
+        <COMPID name="LegislativeInstitution" mc="Class" uid="0bb08c62-da17-4612-81bc-219515bc5075"/>
+        <COMPID name="JudicialInstitution" mc="Class" uid="671cc30b-158b-47e8-a903-8b3e0bc1fc2b"/>
+        <COMPID name="CentralExecutiveOffice" mc="Class" uid="3eb5f017-e23f-427a-aa57-0456eeb77a2e"/>
+        <COMPID name="ExecutiveDepartment" mc="Class" uid="620e1f51-c3af-4898-b959-f2772ecb0a49"/>
+        <COMPID name="Legislature" mc="Class" uid="9a447783-13e3-4396-bf4d-4f09b552a830"/>
+        <COMPID name="LegislativeCommittee" mc="Class" uid="c3fad0a7-201c-459d-8f38-dde9d5bd64a6"/>
+        <COMPID name="Court" mc="Class" uid="1c475bfe-2559-40e5-97bd-bf1e16a115c4"/>
+        <COMPID name="OfficePOTUS" mc="Class" uid="cf3d6c6b-eb2d-445a-813f-7b506803058d"/>
+        <COMPID name="SCOTUS" mc="Class" uid="9d2cf9ed-bb01-459b-b523-30e1d6bf3a28"/>
+        <COMPID name="Congress" mc="Class" uid="20b857ad-7877-4940-8430-8c03764010f9"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="SGovCore" mc="ClassDiagram" uid="dddf2efc-b668-4fb0-a3bc-5d47f656be2e"/>
+        <COMPID name="SGovFederal" mc="ClassDiagram" uid="dcd86c12-b967-4d99-91e9-6381a0273b22"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
