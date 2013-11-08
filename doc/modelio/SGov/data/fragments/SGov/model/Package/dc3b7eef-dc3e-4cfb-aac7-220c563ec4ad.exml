@@ -3,9 +3,6 @@
   <DEPS>
     <ID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
     <COMPID name="SGovCore" mc="ClassDiagram" uid="dddf2efc-b668-4fb0-a3bc-5d47f656be2e"/>
-    <COMPID name="SGovFederalCore" mc="ClassDiagram" uid="dcd86c12-b967-4d99-91e9-6381a0273b22"/>
-    <COMPID name="SGovFederalExecutive" mc="ClassDiagram" uid="22737947-b21e-4c30-95d8-9b54a74ee52d"/>
-    <COMPID name="SGovFederalLegislative" mc="ClassDiagram" uid="98b92475-deaa-47c0-bab9-0a4e39c3e3b4"/>
     <COMPID name="core" mc="Package" uid="c51ae3a8-0a53-4d87-af24-da6400cd02b3"/>
   </DEPS>
   <OBJECT>
@@ -26,9 +23,6 @@
       </COMP>
       <COMP relation="Product">
         <COMPID name="SGovCore" mc="ClassDiagram" uid="dddf2efc-b668-4fb0-a3bc-5d47f656be2e"/>
-        <COMPID name="SGovFederalCore" mc="ClassDiagram" uid="dcd86c12-b967-4d99-91e9-6381a0273b22"/>
-        <COMPID name="SGovFederalExecutive" mc="ClassDiagram" uid="22737947-b21e-4c30-95d8-9b54a74ee52d"/>
-        <COMPID name="SGovFederalLegislative" mc="ClassDiagram" uid="98b92475-deaa-47c0-bab9-0a4e39c3e3b4"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>

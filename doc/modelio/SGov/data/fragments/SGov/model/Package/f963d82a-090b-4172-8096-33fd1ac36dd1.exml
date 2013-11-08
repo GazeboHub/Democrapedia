@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="US" version="3">
+  <DEPS>
+    <ID name="US" mc="Package" uid="f963d82a-090b-4172-8096-33fd1ac36dd1"/>
+    <COMPID name="SGovFederalCore" mc="ClassDiagram" uid="dcd86c12-b967-4d99-91e9-6381a0273b22"/>
+    <COMPID name="SGovFederalExecutive" mc="ClassDiagram" uid="22737947-b21e-4c30-95d8-9b54a74ee52d"/>
+    <COMPID name="SGovFederalLegislative" mc="ClassDiagram" uid="98b92475-deaa-47c0-bab9-0a4e39c3e3b4"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="US" mc="Package" uid="f963d82a-090b-4172-8096-33fd1ac36dd1"/>
+    <PID name="regional" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[US]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Product">
+        <COMPID name="SGovFederalCore" mc="ClassDiagram" uid="dcd86c12-b967-4d99-91e9-6381a0273b22"/>
+        <COMPID name="SGovFederalExecutive" mc="ClassDiagram" uid="22737947-b21e-4c30-95d8-9b54a74ee52d"/>
+        <COMPID name="SGovFederalLegislative" mc="ClassDiagram" uid="98b92475-deaa-47c0-bab9-0a4e39c3e3b4"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

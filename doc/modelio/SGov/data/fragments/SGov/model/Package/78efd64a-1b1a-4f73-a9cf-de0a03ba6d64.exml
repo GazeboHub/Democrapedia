@@ -3,6 +3,7 @@
   <DEPS>
     <ID name="regional" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
     <COMPID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
+    <COMPID name="US" mc="Package" uid="f963d82a-090b-4172-8096-33fd1ac36dd1"/>
   </DEPS>
   <OBJECT>
     <ID name="regional" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
@@ -19,6 +20,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
         <COMPID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
+        <COMPID name="US" mc="Package" uid="f963d82a-090b-4172-8096-33fd1ac36dd1"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>
