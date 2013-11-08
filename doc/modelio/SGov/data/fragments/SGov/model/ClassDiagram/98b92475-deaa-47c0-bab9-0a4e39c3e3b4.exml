@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="SGovFederalLegislative" version="3">
+  <DEPS>
+    <ID name="SGovFederalLegislative" mc="ClassDiagram" uid="98b92475-deaa-47c0-bab9-0a4e39c3e3b4"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="SGovFederalLegislative" mc="ClassDiagram" uid="98b92475-deaa-47c0-bab9-0a4e39c3e3b4"/>
+    <PID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+    <ATTRIBUTES>
+      <ATT name="UiDataVersion">19</ATT>
+      <ATT name="UiData"><![CDATA[eJztm11v4jgUhv9KxH1oSJwCmk5Hs3S3W22nMyrSXMxN5cQH6qkTI9u0pb9+nPChHehCaoiTspEqQQw5tpPH5rw5b88+PSfMeQQhKU8/tjptr+V8Oj/7Gv2EWDmU6KaWo2YT+NjiYtxOOAFGeZtQPBY4aQOhiou2VFjRhzYwSCBVcn4cL790mQzz44v5cctJ8E8u7ladeq3zs2+CT0ComZPiRPfF8IxP1QVWWH/2HbMpLAaRThlrnZyfnSxP2Dh1qGYMWr9Nwd82BZl9X7ZjLqA9P7fA+AZYxpgAWXb257O6hVHBXm50iMWZDjyri+hKjzF/m70hMMJTptYmeTKfzraJC2BYAdHjWLtmX7Im5zFr0SNnWMrFnXD6vajvo27oEsDYRd3YcyMc9V0PIwj6cQBBhLZfbR1N/ZPyp/QaR8DWOh4qQdPxquvhJX/8CwgIzK5hTKUeLn2E7fEFZ3CVDngy4ZIqfTu2d7E92OCeMiIgi3FNpfqNkcAA85jhlxeNd35N98L6Vg8Dp+OMiMVMAuR9OPU+uB3992bgUenAZ7TPl1aZnDoh8gDHpyOX+DhyEQl7bhSg2PU9nyACvdAnp4cDdMDTsQB9K+uBZLgvkt8ETbCY3ehT7W+6p0UZ1KGeZ3uDuL5PNSCuB/2CaZqjYAxk1wDILKqc4BjuQd82odG8Wbb8nbfYJ7NnbXdcR6KBcj3ogoGtIeU9f7qj8UaoP7juC6erWCPM5A6681APMHvighwgmsLxw51UIIDviKbEtMjQ2Cu34e2hcCSVwLEymOGK0H+tl77Z75CUdETzFT9YHdyCpC84YnAp+HRif+l3PLu/Ss0GUF561DFRpljp7qOpgnEGoGbz87KhKiILi9PDEKlXQIPk9qBrSLwN0JPFy/YttWMiN7OAOBv+kt2vy4aq2C2sMxt2bSX5oO45KRFcE1FKU50ipTrb0KlLrKaah8vkatE2XLZVgK9lidrguxPfJRV7ZAUmIrUQoFVtsoXl6oEoPYqc9ZBQlribmkirQrD+4GkFO6pvWV4dB6ul7qg5CAdjtxjWvokyo2kKIn9skPOsD/Yvq2TLYpw9YlxcDINSit/os7ohncNhniH4JtrrP+isKCfwLQsvvynzVZck+GaS61VeQVaUGFiWWg2w9UkMNj9a64fK7/qIxtig8lG8l82aeHtB1o6kIShQIvGNVGeCx7Cqj+aln2yxZq1ZjXSYtc7pOGQOtMPQ89ritaxAm1L+rrU71JNljKoiJcV3XjgtOjbDyulblY1hLbQ0m5i/h0ssKKzW624TG4W9HkIQuqTndV3U68Zu3xthd+TFEHSxD4SEh1vSmx7Gq1Qqqqb5wq1HcTQwkeD1MY8FllV3ULLqPlZA9/eUBSZqvIamssCe5zZodtPGa3akXrPA0PRcR7NZYPmhR7MvWM+yTGR/7SxogWV9H5RctTtWTi340gITfZsFrJUvDVkuQzdA19Oshszq0LU0qyHbirhhuiIHGzKrT9fXwYYsV6vRUeTB76M4jUrzA1dTqEa2/231KFi1v81WYWtDZtbiWtraUKP53gXne3rdkJnBuE5et9CymNMroyG1VjlGeEA7cVUGuNCyfGsornle8X9wxYVGSvaduOJCy6q2sSg0Xrn6e+V2bjjXNH2QBfbOX9fESzI=]]></ATT>
+      <ATT name="PdeProperties"></ATT>
+      <ATT name="Name"><![CDATA[SGovFederalLegislative]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

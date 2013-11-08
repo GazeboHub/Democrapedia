@@ -22,7 +22,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedEnd">
         <OBJECT>
-          <ID name="" mc="AssociationEnd" uid="bbddbdc0-160d-4585-8ec5-5d0ef611c893"/>
+          <ID name="office" mc="AssociationEnd" uid="bbddbdc0-160d-4585-8ec5-5d0ef611c893"/>
           <PID name="ExecutiveDepartment" mc="Class" uid="620e1f51-c3af-4898-b959-f2772ecb0a49"/>
           <ATTRIBUTES>
             <ATT name="Aggregation">KindIsAssociation</ATT>
@@ -36,7 +36,7 @@
             <ATT name="Visibility">Public</ATT>
             <ATT name="IsClass">false</ATT>
             <ATT name="IsAbstract">false</ATT>
-            <ATT name="Name"></ATT>
+            <ATT name="Name"><![CDATA[office]]></ATT>
             <ATT name="status">1970354901745664</ATT>
           </ATTRIBUTES>
           <DEPENDENCIES>
@@ -45,7 +45,7 @@
             </LINK>
             <COMP relation="Opposite">
               <OBJECT>
-                <ID name="" mc="AssociationEnd" uid="0ca3d316-56c6-42ca-8d41-e62864e541c3"/>
+                <ID name="department" mc="AssociationEnd" uid="0ca3d316-56c6-42ca-8d41-e62864e541c3"/>
                 <PID name="ExecutiveDepartment" mc="Class" uid="620e1f51-c3af-4898-b959-f2772ecb0a49"/>
                 <ATTRIBUTES>
                   <ATT name="Aggregation">KindIsAssociation</ATT>
@@ -59,12 +59,12 @@
                   <ATT name="Visibility">Public</ATT>
                   <ATT name="IsClass">false</ATT>
                   <ATT name="IsAbstract">false</ATT>
-                  <ATT name="Name"></ATT>
+                  <ATT name="Name"><![CDATA[department]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
                 </ATTRIBUTES>
                 <DEPENDENCIES>
                   <COMP relation="Opposite">
-                    <COMPID name="" mc="AssociationEnd" uid="bbddbdc0-160d-4585-8ec5-5d0ef611c893"/>
+                    <COMPID name="office" mc="AssociationEnd" uid="bbddbdc0-160d-4585-8ec5-5d0ef611c893"/>
                   </COMP>
                   <COMP relation="Association">
                     <OBJECT>
