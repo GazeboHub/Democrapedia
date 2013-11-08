@@ -7,7 +7,7 @@
   </DEPS>
   <OBJECT>
     <ID name="ExecutiveDepartment" mc="Class" uid="620e1f51-c3af-4898-b959-f2772ecb0a49"/>
-    <PID name="structural" mc="Package" uid="461b4280-83ef-4469-93f5-1f23e1b2207b"/>
+    <PID name="executive" mc="Package" uid="cfd88c00-79df-4f7d-bc68-eba7dfdd7adf"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
       <ATT name="IsMain">false</ATT>

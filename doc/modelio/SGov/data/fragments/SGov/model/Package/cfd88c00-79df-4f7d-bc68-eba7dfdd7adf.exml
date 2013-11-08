@@ -1,0 +1,29 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="executive" version="3">
+  <DEPS>
+    <ID name="executive" mc="Package" uid="cfd88c00-79df-4f7d-bc68-eba7dfdd7adf"/>
+    <COMPID name="CentralExecutiveOffice" mc="Class" uid="3eb5f017-e23f-427a-aa57-0456eeb77a2e"/>
+    <COMPID name="ExecutiveDepartment" mc="Class" uid="620e1f51-c3af-4898-b959-f2772ecb0a49"/>
+    <COMPID name="ExecutiveInstitution" mc="Class" uid="4e1098f0-1659-408b-8063-7535112363f7"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="executive" mc="Package" uid="cfd88c00-79df-4f7d-bc68-eba7dfdd7adf"/>
+    <PID name="structural" mc="Package" uid="461b4280-83ef-4469-93f5-1f23e1b2207b"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[executive]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="ExecutiveInstitution" mc="Class" uid="4e1098f0-1659-408b-8063-7535112363f7"/>
+        <COMPID name="CentralExecutiveOffice" mc="Class" uid="3eb5f017-e23f-427a-aa57-0456eeb77a2e"/>
+        <COMPID name="ExecutiveDepartment" mc="Class" uid="620e1f51-c3af-4898-b959-f2772ecb0a49"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>
