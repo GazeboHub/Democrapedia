@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Feature" version="3">
+  <DEPS>
+    <ID name="Feature" mc="Class" uid="5e90d3eb-c130-4b3d-b87b-28a85648db7c"/>
+    <EXTID name="Geometry" mc="Class" uid="24909869-c6da-4283-ad5f-bec5aad879c4"/>
+    <EXTID name="SpatialObject" mc="Class" uid="6370a71f-23b6-4a52-9a7b-a9fd09ca99b3"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Feature" mc="Class" uid="5e90d3eb-c130-4b3d-b87b-28a85648db7c"/>
+    <PID name="geosparql" mc="Package" uid="72fa3fb0-2ac5-4d50-8e7e-19f1fa38391e"/>
+    <ATTRIBUTES>
+      <ATT name="IsActive">false</ATT>
+      <ATT name="IsMain">false</ATT>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Feature]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedEnd">
+        <OBJECT>
+          <ID name="geometry" mc="AssociationEnd" uid="443d39a6-b232-4a47-85a2-2108fc05c64b"/>
+          <PID name="Feature" mc="Class" uid="5e90d3eb-c130-4b3d-b87b-28a85648db7c"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"><![CDATA[geometry]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Geometry" mc="Class" uid="24909869-c6da-4283-ad5f-bec5aad879c4"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="feature" mc="AssociationEnd" uid="4a06e148-d8bf-4053-804a-ab0e3f0d722a"/>
+                <PID name="Feature" mc="Class" uid="5e90d3eb-c130-4b3d-b87b-28a85648db7c"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[*]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"><![CDATA[feature]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Opposite">
+                    <COMPID name="geometry" mc="AssociationEnd" uid="443d39a6-b232-4a47-85a2-2108fc05c64b"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="hasGeometry" mc="Association" uid="b0058715-0479-4193-aed0-480d5aa9bfab"/>
+                      <PID name="Feature" mc="Class" uid="5e90d3eb-c130-4b3d-b87b-28a85648db7c"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"><![CDATA[hasGeometry]]></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <OBJECT>
+                <ID name="hasGeometry" mc="Association" uid="b0058715-0479-4193-aed0-480d5aa9bfab"/>
+                <PID name="Feature" mc="Class" uid="5e90d3eb-c130-4b3d-b87b-28a85648db7c"/>
+                <ATTRIBUTES>
+                  <ATT name="Name"><![CDATA[hasGeometry]]></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES></DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Parent">
+        <OBJECT>
+          <ID name="Generalization" mc="Generalization" uid="5390ce97-2e5e-4b26-9277-98eb38a12443"/>
+          <PID name="Feature" mc="Class" uid="5e90d3eb-c130-4b3d-b87b-28a85648db7c"/>
+          <ATTRIBUTES>
+            <ATT name="Discriminator"></ATT>
+            <ATT name="Name"><![CDATA[Generalization]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="SuperType">
+              <ID name="SpatialObject" mc="Class" uid="6370a71f-23b6-4a52-9a7b-a9fd09ca99b3"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

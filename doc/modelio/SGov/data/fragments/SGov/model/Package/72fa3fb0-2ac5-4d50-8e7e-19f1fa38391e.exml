@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="geosparql" version="3">
+  <DEPS>
+    <ID name="geosparql" mc="Package" uid="72fa3fb0-2ac5-4d50-8e7e-19f1fa38391e"/>
+    <COMPID name="Feature" mc="Class" uid="5e90d3eb-c130-4b3d-b87b-28a85648db7c"/>
+    <COMPID name="GeoSPARQL" mc="ClassDiagram" uid="a98d989d-55f8-4d64-a22d-6737ab8f280b"/>
+    <COMPID name="Geometry" mc="Class" uid="24909869-c6da-4283-ad5f-bec5aad879c4"/>
+    <COMPID name="SpatialObject" mc="Class" uid="6370a71f-23b6-4a52-9a7b-a9fd09ca99b3"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="geosparql" mc="Package" uid="72fa3fb0-2ac5-4d50-8e7e-19f1fa38391e"/>
+    <PID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[geosparql]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Feature" mc="Class" uid="5e90d3eb-c130-4b3d-b87b-28a85648db7c"/>
+        <COMPID name="SpatialObject" mc="Class" uid="6370a71f-23b6-4a52-9a7b-a9fd09ca99b3"/>
+        <COMPID name="Geometry" mc="Class" uid="24909869-c6da-4283-ad5f-bec5aad879c4"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="GeoSPARQL" mc="ClassDiagram" uid="a98d989d-55f8-4d64-a22d-6737ab8f280b"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

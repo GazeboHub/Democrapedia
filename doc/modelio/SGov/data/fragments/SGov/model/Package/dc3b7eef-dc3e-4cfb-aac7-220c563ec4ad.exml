@@ -4,6 +4,7 @@
     <ID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
     <COMPID name="SGovCore" mc="ClassDiagram" uid="dddf2efc-b668-4fb0-a3bc-5d47f656be2e"/>
     <COMPID name="core" mc="Package" uid="c51ae3a8-0a53-4d87-af24-da6400cd02b3"/>
+    <COMPID name="geosparql" mc="Package" uid="72fa3fb0-2ac5-4d50-8e7e-19f1fa38391e"/>
   </DEPS>
   <OBJECT>
     <ID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
@@ -20,6 +21,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
         <COMPID name="core" mc="Package" uid="c51ae3a8-0a53-4d87-af24-da6400cd02b3"/>
+        <COMPID name="geosparql" mc="Package" uid="72fa3fb0-2ac5-4d50-8e7e-19f1fa38391e"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="SGovCore" mc="ClassDiagram" uid="dddf2efc-b668-4fb0-a3bc-5d47f656be2e"/>
