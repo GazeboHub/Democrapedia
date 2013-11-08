@@ -1,12 +1,12 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="regional" version="3">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="geographical" version="3">
   <DEPS>
-    <ID name="regional" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
+    <ID name="geographical" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
     <COMPID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
     <COMPID name="US" mc="Package" uid="f963d82a-090b-4172-8096-33fd1ac36dd1"/>
   </DEPS>
   <OBJECT>
-    <ID name="regional" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
+    <ID name="geographical" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
     <PID name="core" mc="Package" uid="c51ae3a8-0a53-4d87-af24-da6400cd02b3"/>
     <ATTRIBUTES>
       <ATT name="IsInstantiable">false</ATT>
@@ -14,7 +14,7 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[regional]]></ATT>
+      <ATT name="Name"><![CDATA[geographical]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
