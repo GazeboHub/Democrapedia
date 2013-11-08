@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="judicial" version="3">
+  <DEPS>
+    <ID name="judicial" mc="Package" uid="57f995f2-0199-4d78-901d-fa07b58156f0"/>
+    <COMPID name="SCOTUS" mc="Class" uid="c6d59ea0-244b-4d40-adff-2b00f515ee08"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="judicial" mc="Package" uid="57f995f2-0199-4d78-901d-fa07b58156f0"/>
+    <PID name="federal" mc="Package" uid="989431c0-e0e9-4bd4-a453-af0741dffb56"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[judicial]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="SCOTUS" mc="Class" uid="c6d59ea0-244b-4d40-adff-2b00f515ee08"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

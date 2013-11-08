@@ -6,7 +6,7 @@
   </DEPS>
   <OBJECT>
     <ID name="JudicialInstitution" mc="Class" uid="671cc30b-158b-47e8-a903-8b3e0bc1fc2b"/>
-    <PID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+    <PID name="structural" mc="Package" uid="461b4280-83ef-4469-93f5-1f23e1b2207b"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
       <ATT name="IsMain">false</ATT>

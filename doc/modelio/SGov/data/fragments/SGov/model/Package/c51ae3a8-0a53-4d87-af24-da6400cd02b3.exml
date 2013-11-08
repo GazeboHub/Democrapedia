@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="core" version="3">
+  <DEPS>
+    <ID name="core" mc="Package" uid="c51ae3a8-0a53-4d87-af24-da6400cd02b3"/>
+    <COMPID name="regional" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
+    <COMPID name="structural" mc="Package" uid="461b4280-83ef-4469-93f5-1f23e1b2207b"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="core" mc="Package" uid="c51ae3a8-0a53-4d87-af24-da6400cd02b3"/>
+    <PID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[core]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="structural" mc="Package" uid="461b4280-83ef-4469-93f5-1f23e1b2207b"/>
+        <COMPID name="regional" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

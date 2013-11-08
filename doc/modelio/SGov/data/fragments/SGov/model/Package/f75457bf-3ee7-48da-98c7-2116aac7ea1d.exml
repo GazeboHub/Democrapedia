@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="executive" version="3">
+  <DEPS>
+    <ID name="executive" mc="Package" uid="f75457bf-3ee7-48da-98c7-2116aac7ea1d"/>
+    <COMPID name="OfficePOTUS" mc="Class" uid="cf3d6c6b-eb2d-445a-813f-7b506803058d"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="executive" mc="Package" uid="f75457bf-3ee7-48da-98c7-2116aac7ea1d"/>
+    <PID name="federal" mc="Package" uid="989431c0-e0e9-4bd4-a453-af0741dffb56"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[executive]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="OfficePOTUS" mc="Class" uid="cf3d6c6b-eb2d-445a-813f-7b506803058d"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

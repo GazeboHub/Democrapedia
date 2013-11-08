@@ -2,12 +2,12 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Legislature" version="3">
   <DEPS>
     <ID name="Legislature" mc="Class" uid="9a447783-13e3-4396-bf4d-4f09b552a830"/>
-    <EXTID name="LegislatifeCommittee" mc="Class" uid="c3fad0a7-201c-459d-8f38-dde9d5bd64a6"/>
+    <EXTID name="LegislativeCommittee" mc="Class" uid="c3fad0a7-201c-459d-8f38-dde9d5bd64a6"/>
     <EXTID name="LegislativeInstitution" mc="Class" uid="0bb08c62-da17-4612-81bc-219515bc5075"/>
   </DEPS>
   <OBJECT>
     <ID name="Legislature" mc="Class" uid="9a447783-13e3-4396-bf4d-4f09b552a830"/>
-    <PID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+    <PID name="structural" mc="Package" uid="461b4280-83ef-4469-93f5-1f23e1b2207b"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
       <ATT name="IsMain">false</ATT>
@@ -41,7 +41,7 @@
           </ATTRIBUTES>
           <DEPENDENCIES>
             <LINK relation="Target">
-              <ID name="LegislatifeCommittee" mc="Class" uid="c3fad0a7-201c-459d-8f38-dde9d5bd64a6"/>
+              <ID name="LegislativeCommittee" mc="Class" uid="c3fad0a7-201c-459d-8f38-dde9d5bd64a6"/>
             </LINK>
             <COMP relation="Opposite">
               <OBJECT>

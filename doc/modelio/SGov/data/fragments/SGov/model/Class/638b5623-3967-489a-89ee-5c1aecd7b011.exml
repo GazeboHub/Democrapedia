@@ -7,7 +7,7 @@
   </DEPS>
   <OBJECT>
     <ID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
-    <PID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+    <PID name="regional" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
       <ATT name="IsMain">false</ATT>

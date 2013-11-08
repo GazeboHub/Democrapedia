@@ -1,0 +1,37 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="federal" version="3">
+  <DEPS>
+    <ID name="federal" mc="Package" uid="989431c0-e0e9-4bd4-a453-af0741dffb56"/>
+    <COMPID name="FederalExecutiveInstitution" mc="Class" uid="6b34dfc0-85b9-44a4-abb0-9ba81af17269"/>
+    <COMPID name="FederalInstitution" mc="Class" uid="a43d1405-6b91-4697-a341-17e8954ccde4"/>
+    <COMPID name="FederalJudicialInstitution" mc="Class" uid="4f288f73-cc47-408a-b67b-bf20a9f94a21"/>
+    <COMPID name="FederalLegislativeInstitution" mc="Class" uid="f58844e5-d807-487c-90fa-f0ce37a2edd5"/>
+    <COMPID name="executive" mc="Package" uid="f75457bf-3ee7-48da-98c7-2116aac7ea1d"/>
+    <COMPID name="judicial" mc="Package" uid="57f995f2-0199-4d78-901d-fa07b58156f0"/>
+    <COMPID name="legislative" mc="Package" uid="c687e96e-577f-449d-b0fe-50a4530e456e"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="federal" mc="Package" uid="989431c0-e0e9-4bd4-a453-af0741dffb56"/>
+    <PID name="structural" mc="Package" uid="461b4280-83ef-4469-93f5-1f23e1b2207b"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[federal]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="FederalInstitution" mc="Class" uid="a43d1405-6b91-4697-a341-17e8954ccde4"/>
+        <COMPID name="FederalExecutiveInstitution" mc="Class" uid="6b34dfc0-85b9-44a4-abb0-9ba81af17269"/>
+        <COMPID name="FederalLegislativeInstitution" mc="Class" uid="f58844e5-d807-487c-90fa-f0ce37a2edd5"/>
+        <COMPID name="FederalJudicialInstitution" mc="Class" uid="4f288f73-cc47-408a-b67b-bf20a9f94a21"/>
+        <COMPID name="executive" mc="Package" uid="f75457bf-3ee7-48da-98c7-2116aac7ea1d"/>
+        <COMPID name="legislative" mc="Package" uid="c687e96e-577f-449d-b0fe-50a4530e456e"/>
+        <COMPID name="judicial" mc="Package" uid="57f995f2-0199-4d78-901d-fa07b58156f0"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

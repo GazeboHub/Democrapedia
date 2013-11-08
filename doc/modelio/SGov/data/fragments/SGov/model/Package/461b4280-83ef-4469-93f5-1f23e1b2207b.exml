@@ -1,0 +1,45 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="structural" version="3">
+  <DEPS>
+    <ID name="structural" mc="Package" uid="461b4280-83ef-4469-93f5-1f23e1b2207b"/>
+    <COMPID name="CentralExecutiveOffice" mc="Class" uid="3eb5f017-e23f-427a-aa57-0456eeb77a2e"/>
+    <COMPID name="Court" mc="Class" uid="1c475bfe-2559-40e5-97bd-bf1e16a115c4"/>
+    <COMPID name="ExecutiveDepartment" mc="Class" uid="620e1f51-c3af-4898-b959-f2772ecb0a49"/>
+    <COMPID name="ExecutiveInstitution" mc="Class" uid="4e1098f0-1659-408b-8063-7535112363f7"/>
+    <COMPID name="GovernmentalCompliment" mc="Class" uid="9d96e3ac-9130-4d02-8676-ab4fd79506e9"/>
+    <COMPID name="GovernmentalInstitution" mc="Class" uid="34799365-7e11-4ccb-80e6-fce10336db82"/>
+    <COMPID name="JudicialInstitution" mc="Class" uid="671cc30b-158b-47e8-a903-8b3e0bc1fc2b"/>
+    <COMPID name="LegislativeCommittee" mc="Class" uid="c3fad0a7-201c-459d-8f38-dde9d5bd64a6"/>
+    <COMPID name="LegislativeInstitution" mc="Class" uid="0bb08c62-da17-4612-81bc-219515bc5075"/>
+    <COMPID name="Legislature" mc="Class" uid="9a447783-13e3-4396-bf4d-4f09b552a830"/>
+    <COMPID name="federal" mc="Package" uid="989431c0-e0e9-4bd4-a453-af0741dffb56"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="structural" mc="Package" uid="461b4280-83ef-4469-93f5-1f23e1b2207b"/>
+    <PID name="core" mc="Package" uid="c51ae3a8-0a53-4d87-af24-da6400cd02b3"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[structural]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="federal" mc="Package" uid="989431c0-e0e9-4bd4-a453-af0741dffb56"/>
+        <COMPID name="GovernmentalInstitution" mc="Class" uid="34799365-7e11-4ccb-80e6-fce10336db82"/>
+        <COMPID name="GovernmentalCompliment" mc="Class" uid="9d96e3ac-9130-4d02-8676-ab4fd79506e9"/>
+        <COMPID name="ExecutiveInstitution" mc="Class" uid="4e1098f0-1659-408b-8063-7535112363f7"/>
+        <COMPID name="LegislativeInstitution" mc="Class" uid="0bb08c62-da17-4612-81bc-219515bc5075"/>
+        <COMPID name="JudicialInstitution" mc="Class" uid="671cc30b-158b-47e8-a903-8b3e0bc1fc2b"/>
+        <COMPID name="CentralExecutiveOffice" mc="Class" uid="3eb5f017-e23f-427a-aa57-0456eeb77a2e"/>
+        <COMPID name="ExecutiveDepartment" mc="Class" uid="620e1f51-c3af-4898-b959-f2772ecb0a49"/>
+        <COMPID name="Legislature" mc="Class" uid="9a447783-13e3-4396-bf4d-4f09b552a830"/>
+        <COMPID name="LegislativeCommittee" mc="Class" uid="c3fad0a7-201c-459d-8f38-dde9d5bd64a6"/>
+        <COMPID name="Court" mc="Class" uid="1c475bfe-2559-40e5-97bd-bf1e16a115c4"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

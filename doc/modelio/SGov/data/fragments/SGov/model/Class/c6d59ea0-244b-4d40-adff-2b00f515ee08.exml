@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="SCOTUS" version="3">
   <DEPS>
-    <ID name="SCOTUS" mc="Class" uid="9d2cf9ed-bb01-459b-b523-30e1d6bf3a28"/>
+    <ID name="SCOTUS" mc="Class" uid="c6d59ea0-244b-4d40-adff-2b00f515ee08"/>
     <EXTID name="Court" mc="Class" uid="1c475bfe-2559-40e5-97bd-bf1e16a115c4"/>
-    <EXTID name="FederalInstitution" mc="Class" uid="a43d1405-6b91-4697-a341-17e8954ccde4"/>
+    <EXTID name="FederalJudicialInstitution" mc="Class" uid="4f288f73-cc47-408a-b67b-bf20a9f94a21"/>
   </DEPS>
   <OBJECT>
-    <ID name="SCOTUS" mc="Class" uid="9d2cf9ed-bb01-459b-b523-30e1d6bf3a28"/>
-    <PID name="sgov" mc="Package" uid="dc3b7eef-dc3e-4cfb-aac7-220c563ec4ad"/>
+    <ID name="SCOTUS" mc="Class" uid="c6d59ea0-244b-4d40-adff-2b00f515ee08"/>
+    <PID name="judicial" mc="Package" uid="57f995f2-0199-4d78-901d-fa07b58156f0"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
       <ATT name="IsMain">false</ATT>
@@ -22,8 +22,8 @@
     <DEPENDENCIES>
       <COMP relation="Parent">
         <OBJECT>
-          <ID name="Generalization" mc="Generalization" uid="249963e3-44c6-41d9-b0be-55f76f2d1f61"/>
-          <PID name="SCOTUS" mc="Class" uid="9d2cf9ed-bb01-459b-b523-30e1d6bf3a28"/>
+          <ID name="Generalization" mc="Generalization" uid="20012d1d-1fdb-4c9e-bc76-8be17d126b38"/>
+          <PID name="SCOTUS" mc="Class" uid="c6d59ea0-244b-4d40-adff-2b00f515ee08"/>
           <ATTRIBUTES>
             <ATT name="Discriminator"></ATT>
             <ATT name="Name"><![CDATA[Generalization]]></ATT>
@@ -31,13 +31,13 @@
           </ATTRIBUTES>
           <DEPENDENCIES>
             <LINK relation="SuperType">
-              <ID name="FederalInstitution" mc="Class" uid="a43d1405-6b91-4697-a341-17e8954ccde4"/>
+              <ID name="FederalJudicialInstitution" mc="Class" uid="4f288f73-cc47-408a-b67b-bf20a9f94a21"/>
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
         <OBJECT>
-          <ID name="Generalization" mc="Generalization" uid="10b06686-c83f-4c89-a8a8-c5f4eab7a2b5"/>
-          <PID name="SCOTUS" mc="Class" uid="9d2cf9ed-bb01-459b-b523-30e1d6bf3a28"/>
+          <ID name="Generalization" mc="Generalization" uid="9816c027-d370-4345-8ed1-950ad2880d23"/>
+          <PID name="SCOTUS" mc="Class" uid="c6d59ea0-244b-4d40-adff-2b00f515ee08"/>
           <ATTRIBUTES>
             <ATT name="Discriminator"></ATT>
             <ATT name="Name"><![CDATA[Generalization]]></ATT>
