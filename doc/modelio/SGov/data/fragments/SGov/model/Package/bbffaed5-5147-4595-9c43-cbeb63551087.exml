@@ -2,11 +2,12 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="national" version="3">
   <DEPS>
     <ID name="national" mc="Package" uid="bbffaed5-5147-4595-9c43-cbeb63551087"/>
+    <COMPID name="Nation" mc="Class" uid="85e0fc5f-be6a-4c31-b5b3-c3e93611d187"/>
     <COMPID name="US" mc="Package" uid="f963d82a-090b-4172-8096-33fd1ac36dd1"/>
   </DEPS>
   <OBJECT>
     <ID name="national" mc="Package" uid="bbffaed5-5147-4595-9c43-cbeb63551087"/>
-    <PID name="geo" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
+    <PID name="regional" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
     <ATTRIBUTES>
       <ATT name="IsInstantiable">false</ATT>
       <ATT name="IsAbstract">false</ATT>
@@ -19,6 +20,7 @@
     <DEPENDENCIES>
       <COMP relation="OwnedElement">
         <COMPID name="US" mc="Package" uid="f963d82a-090b-4172-8096-33fd1ac36dd1"/>
+        <COMPID name="Nation" mc="Class" uid="85e0fc5f-be6a-4c31-b5b3-c3e93611d187"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>

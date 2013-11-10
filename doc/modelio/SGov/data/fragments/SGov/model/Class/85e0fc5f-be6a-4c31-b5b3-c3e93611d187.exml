@@ -6,7 +6,7 @@
   </DEPS>
   <OBJECT>
     <ID name="Nation" mc="Class" uid="85e0fc5f-be6a-4c31-b5b3-c3e93611d187"/>
-    <PID name="geo" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
+    <PID name="national" mc="Package" uid="bbffaed5-5147-4595-9c43-cbeb63551087"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
       <ATT name="IsMain">false</ATT>

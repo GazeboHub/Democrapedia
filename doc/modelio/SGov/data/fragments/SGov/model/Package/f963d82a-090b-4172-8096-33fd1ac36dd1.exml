@@ -6,10 +6,11 @@
     <COMPID name="SGovFederalExecutive" mc="ClassDiagram" uid="22737947-b21e-4c30-95d8-9b54a74ee52d"/>
     <COMPID name="SGovFederalJudicial" mc="ClassDiagram" uid="0faaba72-4e56-4c0d-b980-8000fe85b56b"/>
     <COMPID name="SGovFederalLegislative" mc="ClassDiagram" uid="98b92475-deaa-47c0-bab9-0a4e39c3e3b4"/>
+    <EXTID name="Nation" mc="Class" uid="85e0fc5f-be6a-4c31-b5b3-c3e93611d187"/>
   </DEPS>
   <OBJECT>
     <ID name="US" mc="Package" uid="f963d82a-090b-4172-8096-33fd1ac36dd1"/>
-    <PID name="nation" mc="Package" uid="bbffaed5-5147-4595-9c43-cbeb63551087"/>
+    <PID name="national" mc="Package" uid="bbffaed5-5147-4595-9c43-cbeb63551087"/>
     <ATTRIBUTES>
       <ATT name="IsInstantiable">false</ATT>
       <ATT name="IsAbstract">false</ATT>
@@ -20,6 +21,25 @@
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
+      <COMP relation="Declared">
+        <OBJECT>
+          <ID name="US" mc="Instance" uid="fb348050-11a6-4e46-8c80-a56cc2c469cf"/>
+          <PID name="US" mc="Package" uid="f963d82a-090b-4172-8096-33fd1ac36dd1"/>
+          <ATTRIBUTES>
+            <ATT name="IsConstant">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="Name"><![CDATA[US]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Base">
+              <ID name="Nation" mc="Class" uid="85e0fc5f-be6a-4c31-b5b3-c3e93611d187"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
       <COMP relation="Product">
         <COMPID name="SGovFederalCore" mc="ClassDiagram" uid="dcd86c12-b967-4d99-91e9-6381a0273b22"/>
         <COMPID name="SGovFederalExecutive" mc="ClassDiagram" uid="22737947-b21e-4c30-95d8-9b54a74ee52d"/>
