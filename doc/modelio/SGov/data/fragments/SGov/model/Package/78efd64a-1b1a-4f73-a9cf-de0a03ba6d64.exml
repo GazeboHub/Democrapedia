@@ -2,8 +2,12 @@
 <!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="geo" version="3">
   <DEPS>
     <ID name="geo" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
+    <COMPID name="Nation" mc="Class" uid="85e0fc5f-be6a-4c31-b5b3-c3e93611d187"/>
     <COMPID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
-    <COMPID name="nation" mc="Package" uid="bbffaed5-5147-4595-9c43-cbeb63551087"/>
+    <COMPID name="SGovRegional" mc="ClassDiagram" uid="7a3cc48e-80fc-4e8d-a967-398a8b2126c9"/>
+    <COMPID name="national" mc="Package" uid="bbffaed5-5147-4595-9c43-cbeb63551087"/>
+    <EXTID name="Nation" mc="Class" uid="85e0fc5f-be6a-4c31-b5b3-c3e93611d187"/>
+    <EXTID name="geosparql" mc="Package" uid="72fa3fb0-2ac5-4d50-8e7e-19f1fa38391e"/>
   </DEPS>
   <OBJECT>
     <ID name="geo" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
@@ -18,9 +22,47 @@
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
+      <COMP relation="Merge">
+        <OBJECT>
+          <ID name="PackageMerge" mc="PackageMerge" uid="cfe05ec1-2599-4307-9a05-9bbcab46bde6"/>
+          <PID name="geo" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[PackageMerge]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="MergedPackage">
+              <ID name="geosparql" mc="Package" uid="72fa3fb0-2ac5-4d50-8e7e-19f1fa38391e"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Declared">
+        <OBJECT>
+          <ID name="US" mc="Instance" uid="fb348050-11a6-4e46-8c80-a56cc2c469cf"/>
+          <PID name="geo" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
+          <ATTRIBUTES>
+            <ATT name="IsConstant">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[1]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Value"></ATT>
+            <ATT name="Name"><![CDATA[US]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Base">
+              <ID name="Nation" mc="Class" uid="85e0fc5f-be6a-4c31-b5b3-c3e93611d187"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
       <COMP relation="OwnedElement">
         <COMPID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
-        <COMPID name="nation" mc="Package" uid="bbffaed5-5147-4595-9c43-cbeb63551087"/>
+        <COMPID name="national" mc="Package" uid="bbffaed5-5147-4595-9c43-cbeb63551087"/>
+        <COMPID name="Nation" mc="Class" uid="85e0fc5f-be6a-4c31-b5b3-c3e93611d187"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="SGovRegional" mc="ClassDiagram" uid="7a3cc48e-80fc-4e8d-a967-398a8b2126c9"/>
       </COMP>
     </DEPENDENCIES>
   </OBJECT>

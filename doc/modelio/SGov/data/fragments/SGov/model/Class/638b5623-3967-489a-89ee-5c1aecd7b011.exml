@@ -1,13 +1,13 @@
 <?xml version="1.0" ?>
-<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="RegionalGovernmentalInstitution" version="3">
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="RegionalGovernment" version="3">
   <DEPS>
-    <ID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
+    <ID name="RegionalGovernment" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
     <EXTID name="GovernmentalCompliment" mc="Class" uid="9d96e3ac-9130-4d02-8676-ab4fd79506e9"/>
     <EXTID name="GovernmentalInstitution" mc="Class" uid="34799365-7e11-4ccb-80e6-fce10336db82"/>
   </DEPS>
   <OBJECT>
-    <ID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
-    <PID name="regional" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
+    <ID name="RegionalGovernment" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
+    <PID name="geo" mc="Package" uid="78efd64a-1b1a-4f73-a9cf-de0a03ba6d64"/>
     <ATTRIBUTES>
       <ATT name="IsActive">false</ATT>
       <ATT name="IsMain">false</ATT>
@@ -16,14 +16,14 @@
       <ATT name="IsLeaf">false</ATT>
       <ATT name="IsRoot">false</ATT>
       <ATT name="Visibility">Public</ATT>
-      <ATT name="Name"><![CDATA[RegionalGovernmentalInstitution]]></ATT>
+      <ATT name="Name"><![CDATA[RegionalGovernment]]></ATT>
       <ATT name="status">1970354901745664</ATT>
     </ATTRIBUTES>
     <DEPENDENCIES>
       <COMP relation="OwnedEnd">
         <OBJECT>
           <ID name="compliment" mc="AssociationEnd" uid="8f557e36-37bf-420f-97fb-0ab1eaaebb20"/>
-          <PID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
+          <PID name="RegionalGovernment" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
           <ATTRIBUTES>
             <ATT name="Aggregation">KindIsComposition</ATT>
             <ATT name="IsChangeable">true</ATT>
@@ -46,7 +46,7 @@
             <COMP relation="Opposite">
               <OBJECT>
                 <ID name="government" mc="AssociationEnd" uid="efcb9bea-fdbf-4334-aafa-68f0b7568637"/>
-                <PID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
+                <PID name="RegionalGovernment" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
                 <ATTRIBUTES>
                   <ATT name="Aggregation">KindIsAssociation</ATT>
                   <ATT name="IsChangeable">true</ATT>
@@ -69,7 +69,7 @@
                   <COMP relation="Association">
                     <OBJECT>
                       <ID name="govtCompliment" mc="Association" uid="211f81c6-5267-43d2-8214-79d211ef8f35"/>
-                      <PID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
+                      <PID name="RegionalGovernment" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
                       <ATTRIBUTES>
                         <ATT name="Name"><![CDATA[govtCompliment]]></ATT>
                         <ATT name="status">1970354901745664</ATT>
@@ -83,7 +83,7 @@
             <COMP relation="Association">
               <OBJECT>
                 <ID name="govtCompliment" mc="Association" uid="211f81c6-5267-43d2-8214-79d211ef8f35"/>
-                <PID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
+                <PID name="RegionalGovernment" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
                 <ATTRIBUTES>
                   <ATT name="Name"><![CDATA[govtCompliment]]></ATT>
                   <ATT name="status">1970354901745664</ATT>
@@ -97,7 +97,7 @@
       <COMP relation="Parent">
         <OBJECT>
           <ID name="Generalization" mc="Generalization" uid="74456524-32b2-456d-8d7e-2e0a12c48310"/>
-          <PID name="RegionalGovernmentalInstitution" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
+          <PID name="RegionalGovernment" mc="Class" uid="638b5623-3967-489a-89ee-5c1aecd7b011"/>
           <ATTRIBUTES>
             <ATT name="Discriminator"></ATT>
             <ATT name="Name"><![CDATA[Generalization]]></ATT>
