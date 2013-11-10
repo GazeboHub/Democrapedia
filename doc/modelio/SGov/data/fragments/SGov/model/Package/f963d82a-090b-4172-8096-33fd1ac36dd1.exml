@@ -6,6 +6,7 @@
     <COMPID name="SGovFederalExecutive" mc="ClassDiagram" uid="22737947-b21e-4c30-95d8-9b54a74ee52d"/>
     <COMPID name="SGovFederalJudicial" mc="ClassDiagram" uid="0faaba72-4e56-4c0d-b980-8000fe85b56b"/>
     <COMPID name="SGovFederalLegislative" mc="ClassDiagram" uid="98b92475-deaa-47c0-bab9-0a4e39c3e3b4"/>
+    <COMPID name="federal" mc="Package" uid="989431c0-e0e9-4bd4-a453-af0741dffb56"/>
     <EXTID name="Nation" mc="Class" uid="85e0fc5f-be6a-4c31-b5b3-c3e93611d187"/>
   </DEPS>
   <OBJECT>
@@ -39,6 +40,9 @@
             </LINK>
           </DEPENDENCIES>
         </OBJECT>
+      </COMP>
+      <COMP relation="OwnedElement">
+        <COMPID name="federal" mc="Package" uid="989431c0-e0e9-4bd4-a453-af0741dffb56"/>
       </COMP>
       <COMP relation="Product">
         <COMPID name="SGovFederalCore" mc="ClassDiagram" uid="dcd86c12-b967-4d99-91e9-6381a0273b22"/>
