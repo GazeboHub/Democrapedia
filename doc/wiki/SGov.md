@@ -158,13 +158,13 @@ the following list, with corresponding UML package names.
     * Composite ontology for definitions of all states' and outlying
       areas' regional instance feature data
 
-* `sgov::ontology::regional::us::oa:oaUS`  [OWLOntology]
-    * Composite ontology for definitions of all outlying areas'
-      regional instance feature data
-
 * `sgov::ontology::regional::us::state::statesUS` [OWLOntology]
     * Composite ontology for definitions of all states' regional
       instance feature data
+
+* `sgov::ontology::regional::us::oa:oaUS`  [OWLOntology]
+    * Composite ontology for definitions of all outlying areas'
+      regional instance feature data
 
 **Instance Reference Ontologies - States, Counties**
 
@@ -192,10 +192,12 @@ the following list, with corresponding UML package names.
 The SGov ontology shall define reference ontology structures and
 reference ontology name patterns for the following entities
 
+* Information as to the date when each region was established
 * Types of outlying area
-* Types of county equivalent in outlying areas
-* Types of Indigenous Regions (Alaska; Reservations)
-* Metro Areas (census data, economic data)
+* Types of _county equivalent_ regions in outlying areas
+* Types of _indigenous regions_ in the US (Alaska; Reservations)
+* Instances of _indigenous regions_ in the US (cf. [TIGER][tiger], [National Atlas][natlAtlas])
+* Metro Areas (census data, economic data, cf. [TIGER][tiger])
 
 
 ## Footnotes
@@ -207,3 +209,5 @@ US State region, but rather to denote those regions' governments for
 their regional, institutional, and principled sovereignty.
 
 [sgovDraft]: https://github.com/GazeboHub/Democrapedia/raw/master/doc/cubetto/Democrapedia.pdf
+[tiger]: http://www.census.gov/geo/maps-data/data/tiger.html
+[natlAtlas]: http://nationalatlas.gov/maplayers.html
