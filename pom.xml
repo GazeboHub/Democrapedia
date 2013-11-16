@@ -10,6 +10,11 @@
 		<module>module/sgov</module>
 		<module>module/ontTool</module>
 	</modules>
+	<properties>
+		<!-- set UTF-8 encoding here, to avoid "Using platform encoding" warning 
+			in Eclipse -->
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
 	<build>
 		<plugins>
 			<plugin>
