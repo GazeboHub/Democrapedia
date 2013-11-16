@@ -192,13 +192,29 @@ the following list, with corresponding UML package names.
 The SGov ontology shall define reference ontology structures and
 reference ontology name patterns for the following entities
 
-* Information as to the date when each region was established
-* Types of outlying area
-* Types of _county equivalent_ regions in outlying areas
-* Types of _indigenous regions_ in the US (Alaska; Reservations)
+* Policy: No URL references onto Wikileaks
+    * Policy: No direct URL references onto Wikileaks
+    * Policy: No direct references onto resources making direct URL references onto Wikileaks (note: This results in a ban of links onto some EFF web pages, others, in the immediate effects of the policy)
+    * Motivations: Resources published of Democrapedia shall not depend upon resources published by agencies aiding, abetting, or making any direct known reliance on practices of data theft. Furthermore, Democrapedia shall make no reference to resources known to present direct or indirect concerns for the safety and security of US service personnel and allied civilian personnel involved in US activities abroad. Democrapedia shall not engage in directed news-making activity. Democrapedia shall publish items of reference, such as must derive transparently from known items of reference.
+* Policy: Vetting any contributed information for its origins, accuracy, and alignment with nonpartisan civic goals of Democrapedia
+* Policy: Transparency with regards to information sources, always, or else of consequent deletion of data records lacking direct source annotations. Motivation: If a source cannot be transparent to the origins of its information, Democrapedia shall neither republish nor make reference to such information. Democrapedia shall not endeavor to develop a role of a news-making agency.
+* Entity Histories
+    * Reference information as to the date when each region was established, and in what measure of state - with reference to the text of the measure, when available in archive (Bounds of imeline: starting at the ratification of the US Constitution, to the present day - pending any publication of a separate ontology about US colonial history, ontologies about records of early exploration of the North American continent, and ontologies onto archaeological data and information of cultural histories of indigenous peoples of the North American continent as a geocultural region)
+* Types of outlying area, with corresponding historic data
+* Types of _county equivalent_ regions in outlying areas, with supporting study of any available, public reference information about discrete regional governmental structures in US outlying areas
+* Types of _indigenous regions_ in the US (Alaska regional corps; Reservations; Rancherias; other)
 * Instances of _indigenous regions_ in the US (cf. [TIGER][tiger], [National Atlas][natlAtlas])
-* Metro Areas (census data, economic data, cf. [TIGER][tiger])
-
+* Metro Areas (census data, economic data, cf. [TIGER][tiger], BLS)
+* NGO information, in a scalable non-partisan model (?)
+* Ontologies onto US governmental and nongovernmental agreements and activities within international domains
+    * US regional implementation of international legal agreements
+        * Highlight: TPP and other items of legislation with regards to concepts of _intellectual property_ and corresponding _development of US national precedents_ of legislative and judicial policy
+    * Contributions to missions of the United Nations, in a timeline spanning from the origins of the UN to the present day; contemporary NGO domain activity, cf. UN Foundation
+    * International trade arrangements, cf. NAFTA, others
+    * International fiscal arrangements, in public information, governmental context only
+    * Historic reference of US involvement in international policing, in public histoical information, governmental organizations only - key concept, _historic organizational transparency_, at the level of governmental organizations with activities in legally public record. (Refer to Democrapedia policy banning URL references onto Wikileaks, and Democrapedia policies forbidding directed "news making", in context with those policies' motivations, as denoted in Democrapedia policy)
+    * Origins of the US international intelligence activity, cf. Camp X in public historic record (ca. WWII) only up to the time of a one-presidential-term blackout onto reference towards such material, and not at any time exceeding "linkage bans" as denoted in Democrapedia policy. (interest: Author is an intel history wonk, and is not a journalist. Such reference information - so far as publicly available and legally vetted - such existing, legal public reference information about historic developments in US intelligence policy, those items may serve to provide a sense of historical perspective about matters of current US intelligence practice - such as, perhaps regrettably, has become something of an object of public attention, in 2013. following on a person's unauthorized disclosures to news-making agencies of assorted, vaguely meaningful items with and without regards to details of current organizational practice in US national security agency)
+     * US federal activity in developments of items of reference about "best practice" with regards to information system security and management - cf. the Orange Book, historically, and its contemporary analogues
 
 ## Footnotes
 

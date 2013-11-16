@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_90PA0EoYEeO5o5rpw0hA_A" name="SGovProfile" metaclassReference="_UI4uoEoZEeO5o5rpw0hA_A" metamodelReference="_90PA0UoYEeO5o5rpw0hA_A">
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_UI4uoEoZEeO5o5rpw0hA_A" alias="Class">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+  </elementImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_90PA0UoYEeO5o5rpw0hA_A">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_90PA0koYEeO5o5rpw0hA_A">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_DwWZ8EoZEeO5o5rpw0hA_A" name="GovernmentalInstitution" isAbstract="true">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_V1T0MEoZEeO5o5rpw0hA_A" name="base_Class" association="_V1c-IEoZEeO5o5rpw0hA_A">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_ITtQYEoZEeO5o5rpw0hA_A" name="RegionalGovernment" isAbstract="true">
+    <generalization xmi:type="uml:Generalization" xmi:id="_K7H-kEoZEeO5o5rpw0hA_A" general="_DwWZ8EoZEeO5o5rpw0hA_A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_V1c-IEoZEeO5o5rpw0hA_A" name="E_GovernmentalInstitution_Class1" memberEnd="_V1c-IUoZEeO5o5rpw0hA_A _V1T0MEoZEeO5o5rpw0hA_A">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_V1c-IUoZEeO5o5rpw0hA_A" name="extension_GovernmentalInstitution" type="_DwWZ8EoZEeO5o5rpw0hA_A" aggregation="composite" association="_V1c-IEoZEeO5o5rpw0hA_A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_bOiisEoZEeO5o5rpw0hA_A" name="GovernmentalCompliment" isAbstract="true">
+    <generalization xmi:type="uml:Generalization" xmi:id="_gLu1cEoZEeO5o5rpw0hA_A" general="_DwWZ8EoZEeO5o5rpw0hA_A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_pMd2IEoZEeO5o5rpw0hA_A" name="ExecutiveInstitution" isAbstract="true">
+    <generalization xmi:type="uml:Generalization" xmi:id="_wffX0EoZEeO5o5rpw0hA_A" general="_bOiisEoZEeO5o5rpw0hA_A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_qBk5MEoZEeO5o5rpw0hA_A" name="LegislativeInstitution" isAbstract="true">
+    <generalization xmi:type="uml:Generalization" xmi:id="_z4G5cEoZEeO5o5rpw0hA_A" general="_bOiisEoZEeO5o5rpw0hA_A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_rPvVcEoZEeO5o5rpw0hA_A" name="JudicialInstitution" isAbstract="true">
+    <generalization xmi:type="uml:Generalization" xmi:id="_2kUoEEoZEeO5o5rpw0hA_A" general="_bOiisEoZEeO5o5rpw0hA_A"/>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_SQkiIEoZEeO5o5rpw0hA_A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_SQ7ugEoZEeO5o5rpw0hA_A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/4.0.0/UML/Profile/L2#/"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/StandardL2.profile.uml#_0"/>
+  </profileApplication>
+</uml:Profile>

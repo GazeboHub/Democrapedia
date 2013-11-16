@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_H87yUEodEeO5o5rpw0hA_A" name="GeoSPARQL" URI="http://www.opengis.net/ont/geosparql" metaclassReference="_icCHUEodEeO5o5rpw0hA_A" metamodelReference="_H87yUUodEeO5o5rpw0hA_A">
+  <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ugWNwEodEeO5o5rpw0hA_A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_ugibAEodEeO5o5rpw0hA_A" name="GeoSPARQL" nsURI="http://www.opengis.net/ont/geosparql" nsPrefix="GeoSPARQL">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_uguBMEodEeO5o5rpw0hA_A" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uguBMUodEeO5o5rpw0hA_A" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uguBMkodEeO5o5rpw0hA_A" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uguBM0odEeO5o5rpw0hA_A" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uguBNEodEeO5o5rpw0hA_A" key="Date" value="2013-11-10"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_uguBNUodEeO5o5rpw0hA_A" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_ugibAUodEeO5o5rpw0hA_A" name="SpatialObject" abstract="true">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ugibAkodEeO5o5rpw0hA_A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_ftDYkEodEeO5o5rpw0hA_A"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_ugibA0odEeO5o5rpw0hA_A" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_ugibBUodEeO5o5rpw0hA_A" name="Geometry" eSuperTypes="_ugibAUodEeO5o5rpw0hA_A">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ugibBkodEeO5o5rpw0hA_A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_m3F9YEodEeO5o5rpw0hA_A"/>
+      </eClassifiers>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_ugibCEodEeO5o5rpw0hA_A" name="Feature" eSuperTypes="_ugibAUodEeO5o5rpw0hA_A">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_ugibCUodEeO5o5rpw0hA_A" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_qhS-QEodEeO5o5rpw0hA_A"/>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_icCHUEodEeO5o5rpw0hA_A" alias="Class">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+  </elementImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_H87yUUodEeO5o5rpw0hA_A">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_METAMODELS/UML.metamodel.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_H87yUkodEeO5o5rpw0hA_A">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_ftDYkEodEeO5o5rpw0hA_A" name="SpatialObject" isAbstract="true">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_jfdTMEodEeO5o5rpw0hA_A" name="base_Class" association="_jfgWgEodEeO5o5rpw0hA_A">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_jfgWgEodEeO5o5rpw0hA_A" name="E_SpatialObject_Class1" memberEnd="_jfgWgUodEeO5o5rpw0hA_A _jfdTMEodEeO5o5rpw0hA_A">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_jfgWgUodEeO5o5rpw0hA_A" name="extension_SpatialObject" type="_ftDYkEodEeO5o5rpw0hA_A" aggregation="composite" association="_jfgWgEodEeO5o5rpw0hA_A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_m3F9YEodEeO5o5rpw0hA_A" name="Geometry">
+    <generalization xmi:type="uml:Generalization" xmi:id="_o9FZgEodEeO5o5rpw0hA_A" general="_ftDYkEodEeO5o5rpw0hA_A"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_qhS-QEodEeO5o5rpw0hA_A" name="Feature">
+    <generalization xmi:type="uml:Generalization" xmi:id="_rWF4QEodEeO5o5rpw0hA_A" general="_ftDYkEodEeO5o5rpw0hA_A"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_g0bwAEogEeO5o5rpw0hA_A" name="hasGeometry" type="_m3F9YEodEeO5o5rpw0hA_A">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mMVBwEogEeO5o5rpw0hA_A"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mMgA4EogEeO5o5rpw0hA_A" value="*"/>
+    </ownedAttribute>
+  </packagedElement>
+  <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_a2aZwEodEeO5o5rpw0hA_A">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_a3ILcEodEeO5o5rpw0hA_A" source="http://www.eclipse.org/uml2/2.0.0/UML">
+      <references xmi:type="ecore:EPackage" href="http://www.eclipse.org/uml2/4.0.0/UML/Profile/L2#/"/>
+    </eAnnotations>
+    <appliedProfile xmi:type="uml:Profile" href="pathmap://UML_PROFILES/StandardL2.profile.uml#_0"/>
+  </profileApplication>
+</uml:Profile>
