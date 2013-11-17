@@ -17,17 +17,19 @@ import org.opengis.feature.Feature;
 
 public class OntToolShp {
 
-	public static FileDataStoreFactorySpi SHP_FACTORY = FileDataStoreFinder.getDataStoreFactory("shp");
-	
+	public static FileDataStoreFactorySpi SHP_FACTORY = FileDataStoreFinder
+			.getDataStoreFactory("shp");
+
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
 	}
-	
+
 	public static DataStore openShpDataStore(File f) {
 		Map<String, Serializable> m = null;
 		try {
-			m = Collections.singletonMap("url", (Serializable) f.toURI().toURL());
+			m = Collections.singletonMap("url", (Serializable) f.toURI()
+					.toURL());
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block (should not be reached)
 			e.printStackTrace();
@@ -38,11 +40,15 @@ public class OntToolShp {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			if (ds != null) {
+				ds.dispose();
+			}
 		}
 		return ds;
 	}
 
-	public static FeatureIterator<Feature> getFeatures (String typeName, DataStore ds) throws IOException {
+	public static FeatureIterator<Feature> getFeatures(String typeName,
+			DataStore ds) throws IOException {
 		FeatureSource<?, ?> fs = ds.getFeatureSource(typeName);
 		FeatureCollection col = fs.getFeatures();
 		FeatureIterator<Feature> it = col.features();
