@@ -10,6 +10,8 @@ public class StateInfoTable {
 	@SuppressWarnings("unused")
 	private static final long serialVersionUID = -1L;
 
+	private static StateInfoTable tableInstance;
+	
 	ArrayList<StateInfo> table;
 	HashMap<Byte, StateInfo> fips52map;
 
@@ -56,6 +58,14 @@ public class StateInfoTable {
 	 */
 	public StateInfo getStateInfo(byte fips52code) {
 		return fips52map.get(fips52code);
+	}
+
+	public static final StateInfoTable getTableInstance() {
+		return tableInstance;
+	}
+
+	public static final void setTableInstance(StateInfoTable tableInstance) {
+		StateInfoTable.tableInstance = tableInstance;
 	}
 
 }
