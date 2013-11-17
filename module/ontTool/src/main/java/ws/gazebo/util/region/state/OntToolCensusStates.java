@@ -1,9 +1,8 @@
-package ws.gazebo.util.ontTool.shp;
+package ws.gazebo.util.region.state;
 
 import java.io.FileReader;
 import java.io.IOException;
 
-import ws.gazebo.util.region.state.StateInfoTable;
 import au.com.bytecode.opencsv.CSVReader;
 
 public class OntToolCensusStates {
