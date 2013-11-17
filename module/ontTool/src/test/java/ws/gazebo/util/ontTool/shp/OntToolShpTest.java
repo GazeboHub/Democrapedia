@@ -59,7 +59,7 @@ public class OntToolShpTest {
 					Iterator<Property> pit = f.getProperties().iterator();
 					while (pit.hasNext()) {
 						Property p = pit.next();
-						// FIXME: always skip feature named the_geom
+						// NB always skip feature named the_geom
 						if (p.getName().toString() != "the_geom") {
 							System.out.println("Feature " + fid + " Property "
 									+ p.getName() + " Value: " + p.getValue());
@@ -81,7 +81,6 @@ public class OntToolShpTest {
 				it.close();
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 			fail("error");
 		}

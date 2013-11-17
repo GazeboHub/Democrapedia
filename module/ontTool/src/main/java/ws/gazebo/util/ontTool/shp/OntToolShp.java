@@ -21,11 +21,6 @@ public class OntToolShp {
 	public static FileDataStoreFactorySpi SHP_FACTORY = FileDataStoreFinder
 			.getDataStoreFactory("shp");
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-	}
-
 	public static DataStore openShpDataStore(String pathname) {
 		File f = new File(pathname);
 		return openShpDataStore(f);
