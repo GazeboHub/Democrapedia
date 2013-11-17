@@ -59,8 +59,8 @@ public class OntToolShp {
 		return ds;
 	}
 
-	public static FeatureIterator<SimpleFeature> getFeatureIterator(String typeName,
-			DataStore ds) throws IOException {
+	public static FeatureIterator<SimpleFeature> getShpFeatureIterator(DataStore ds) throws IOException {
+		String typeName = ds.getTypeNames()[0];
 		FeatureSource<SimpleFeatureType, SimpleFeature> fs = ds.getFeatureSource(typeName);
 		FeatureCollection<SimpleFeatureType, SimpleFeature> col = fs.getFeatures();
 		FeatureIterator<SimpleFeature> it = col.features();

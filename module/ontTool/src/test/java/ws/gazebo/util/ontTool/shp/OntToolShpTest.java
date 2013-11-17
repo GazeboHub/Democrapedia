@@ -42,8 +42,7 @@ public class OntToolShpTest {
 
 	public static final void printFeatureProperties(DataStore ds) {
 		try {
-			String theType = ds.getTypeNames()[0];
-			FeatureIterator<SimpleFeature> it = OntToolShp.getFeatureIterator(theType, ds);
+			FeatureIterator<SimpleFeature> it = OntToolShp.getShpFeatureIterator(ds);
 			try {
 				while (it.hasNext()) {
 					Feature f = it.next();
