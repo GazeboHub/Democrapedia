@@ -9,10 +9,6 @@ public class OntToolCensusStates {
 
 	public static void main(String[] args) {
 
-		// to do: use the iterator approach for OpenCSV
-		// cf. http://opencsv.sourceforge.net/#how-to-read
-		// essentially producing Ontology instance data and properties from the
-		// input value
 
 	}
 
