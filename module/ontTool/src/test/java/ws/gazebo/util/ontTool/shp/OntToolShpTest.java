@@ -13,6 +13,7 @@ import org.junit.Before;
 import org.junit.Test;
 import org.opengis.feature.Feature;
 import org.opengis.feature.Property;
+import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.filter.identity.FeatureId;
 
 public class OntToolShpTest {
@@ -42,7 +43,7 @@ public class OntToolShpTest {
 	public static final void printFeatureProperties(DataStore ds) {
 		try {
 			String theType = ds.getTypeNames()[0];
-			FeatureIterator<Feature> it = OntToolShp.getFeatures(theType, ds);
+			FeatureIterator<SimpleFeature> it = OntToolShp.getFeatureIterator(theType, ds);
 			try {
 				while (it.hasNext()) {
 					Feature f = it.next();

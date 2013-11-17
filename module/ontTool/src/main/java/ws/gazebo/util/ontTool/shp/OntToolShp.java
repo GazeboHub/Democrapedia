@@ -13,7 +13,8 @@ import org.geotools.data.FileDataStoreFactorySpi;
 import org.geotools.data.FileDataStoreFinder;
 import org.geotools.feature.FeatureCollection;
 import org.geotools.feature.FeatureIterator;
-import org.opengis.feature.Feature;
+import org.opengis.feature.simple.SimpleFeature;
+import org.opengis.feature.simple.SimpleFeatureType;
 
 public class OntToolShp {
 
@@ -29,34 +30,40 @@ public class OntToolShp {
 		File f = new File(pathname);
 		return openShpDataStore(f);
 	}
-	
+
+	/**
+	 * Initialize a Geotools {@link DataStore} onto a Shapefile in the local
+	 * filesystem
+	 * 
+	 * @param f
+	 *            file representing the local Shapefile
+	 * @return a {@link DataStore} instance for the Shapefile
+	 * @see {@link DataStore#dispose()}
+	 */
 	public static DataStore openShpDataStore(File f) {
 		Map<String, Serializable> m = null;
 		try {
 			m = Collections.singletonMap("url", (Serializable) f.toURI()
 					.toURL());
 		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block (should not be reached)
+			// (should not be reached)
 			e.printStackTrace();
+			return null;
 		}
 		DataStore ds = null;
 		try {
 			ds = SHP_FACTORY.createDataStore(m);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
-			if (ds != null) {
-				ds.dispose();
-			}
 		}
 		return ds;
 	}
 
-	public static FeatureIterator<Feature> getFeatures(String typeName,
+	public static FeatureIterator<SimpleFeature> getFeatureIterator(String typeName,
 			DataStore ds) throws IOException {
-		FeatureSource<?, ?> fs = ds.getFeatureSource(typeName);
-		FeatureCollection col = fs.getFeatures();
-		FeatureIterator<Feature> it = col.features();
+		FeatureSource<SimpleFeatureType, SimpleFeature> fs = ds.getFeatureSource(typeName);
+		FeatureCollection<SimpleFeatureType, SimpleFeature> col = fs.getFeatures();
+		FeatureIterator<SimpleFeature> it = col.features();
 		return it;
 	}
 }
