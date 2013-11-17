@@ -9,7 +9,6 @@ import java.util.Locale;
 
 import org.geotools.data.DataStore;
 import org.geotools.feature.FeatureIterator;
-import org.opengis.feature.Property;
 import org.opengis.feature.simple.SimpleFeature;
 
 import ws.gazebo.util.ontTool.shp.OntToolShp;
@@ -68,25 +67,25 @@ public class StateTableManager {
 			f = shpIter.next();
 
 			// retrieve entity FIPS ID; retrieve StateInfo on that value as key
-			pStr = (String) requiredStringPropertyValue("STATE_FIPS", f);
+			pStr = (String) OntToolShp.requiredStringPropertyValue("STATE_FIPS", f);
 			fipsID = new Byte(pStr);
 			// CHECK
 			// System.out.println("Found FIPS ID " + fipsID);
 
 			info = tableInstance.getStateInfo(fipsID);
 
-			ordUnion = requiredIntPropertyValue("ORDER_ADM", f);
+			ordUnion = OntToolShp.requiredIntPropertyValue("ORDER_ADM", f);
 			if (ordUnion != 0) { // states only have non-zero ordUnion.
 				// byte ordinal value encoded in data source as of type 'int'
 				info.setOrderAdmittedUnion((byte) ordUnion);
 
-				dayUnion = requiredLongPropertyValue("DAY_ADM", f);
+				dayUnion = OntToolShp.requiredLongPropertyValue("DAY_ADM", f);
 				// day of month encoded in data source as of type 'long'
 				info.setDayAdmittedUnion((byte) dayUnion);
 
 				// month encoded in data source as of type 'string' e.g
 				// "January"
-				monthNameUnion = requiredStringPropertyValue("MONTH_ADM", f);
+				monthNameUnion = OntToolShp.requiredStringPropertyValue("MONTH_ADM", f);
 				// DEBUG System.out.println("Read month \"" + monthNameUnion +
 				// "\"");
 				try {
@@ -102,43 +101,11 @@ public class StateTableManager {
 				info.setMonthAdmittedUnion(monthUnion);
 
 				// year encoded in data source as of type 'long'
-				yearUnion = requiredLongPropertyValue("YEAR_ADM", f);
+				yearUnion = OntToolShp.requiredLongPropertyValue("YEAR_ADM", f);
 				info.setYearAdmittedUnion((short) yearUnion);
 
 			}
 		}
-	}
-
-	public static Property requireProperty(String name, SimpleFeature feature) {
-		Property p = feature.getProperty(name);
-		if (p == null) {
-			System.err.println("Fatal error. Property " + name
-					+ " is null in feature " + feature);
-			System.exit(127);
-		}
-		// Eclipse wasn't observing the return from 'else'
-		// So, leaving this return without the additional control flow
-		// bracketing
-		return p;
-
-	}
-
-	public static String requiredStringPropertyValue(String propertyName,
-			SimpleFeature feature) {
-		Property p = requireProperty(propertyName, feature);
-		return (String) p.getValue();
-	}
-
-	public static Integer requiredIntPropertyValue(String propertyName,
-			SimpleFeature feature) {
-		Property p = requireProperty(propertyName, feature);
-		return (Integer) p.getValue();
-	}
-
-	public static Long requiredLongPropertyValue(String propertyName,
-			SimpleFeature feature) {
-		Property p = requireProperty(propertyName, feature);
-		return (Long) p.getValue();
 	}
 
 }

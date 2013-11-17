@@ -13,6 +13,7 @@ import org.geotools.data.FileDataStoreFactorySpi;
 import org.geotools.data.FileDataStoreFinder;
 import org.geotools.feature.FeatureCollection;
 import org.geotools.feature.FeatureIterator;
+import org.opengis.feature.Property;
 import org.opengis.feature.simple.SimpleFeature;
 import org.opengis.feature.simple.SimpleFeatureType;
 
@@ -60,5 +61,37 @@ public class OntToolShp {
 		FeatureCollection<SimpleFeatureType, SimpleFeature> col = fs.getFeatures();
 		FeatureIterator<SimpleFeature> it = col.features();
 		return it;
+	}
+
+	public static Property requireProperty(String name, SimpleFeature feature) {
+		Property p = feature.getProperty(name);
+		if (p == null) {
+			System.err.println("Fatal error. Property " + name
+					+ " is null in feature " + feature);
+			System.exit(127);
+		}
+		// Eclipse wasn't observing the return from 'else'
+		// So, leaving this return without the additional control flow
+		// bracketing
+		return p;
+	
+	}
+
+	public static String requiredStringPropertyValue(String propertyName,
+			SimpleFeature feature) {
+		Property p = requireProperty(propertyName, feature);
+		return (String) p.getValue();
+	}
+
+	public static Integer requiredIntPropertyValue(String propertyName,
+			SimpleFeature feature) {
+		Property p = requireProperty(propertyName, feature);
+		return (Integer) p.getValue();
+	}
+
+	public static Long requiredLongPropertyValue(String propertyName,
+			SimpleFeature feature) {
+		Property p = requireProperty(propertyName, feature);
+		return (Long) p.getValue();
 	}
 }
