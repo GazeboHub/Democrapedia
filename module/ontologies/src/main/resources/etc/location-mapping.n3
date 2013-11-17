@@ -1,5 +1,6 @@
-@prefix lm: <http://jena.hpl.hp.com/2004/08/location-mapping#>
+@prefix lm: <http://jena.hpl.hp.com/2004/08/location-mapping#> .
 
 [] lm:mapping
-   [ lm:prefix "http://www.gazebo.ws/ont/" ;     lm:altPrefix "file:rdf/" ]
- 
+   [ lm:prefix "http://www.gazebo.ws/ont/" ;     lm:altPrefix "file:rdf/" ],
+   [ lm:name "http://www.gazebo.ws/ont/featuresGNIS.rdf" ; lm:altName "file:rdf/featuresGNIS.rdf"]
+   .
