@@ -1,7 +1,5 @@
 package ws.gazebo.util.region.state;
 
-import java.util.Date;
-
 public final class StateInfo {
 
 	// cf. http://www.census.gov/geo/reference/ansi_statetables.html
@@ -11,7 +9,7 @@ public final class StateInfo {
 	// locally cached at 
 	// workspace:/democrapedia/module/ontTool/src/test/resources/census/state.txt
 
-	int stateNumericANSICode; 
+	byte stateNumericANSICode; 
 	// ^ xsd:byte length=2, pattern=[0-9]{2}, maxInclusive=78
 	// ^ INCITS 38:200x (previously FIPS 5-2)
 	// ^ PRIMARY KEY
@@ -33,19 +31,19 @@ public final class StateInfo {
 	
 
 	public StateInfo(String[] fields) {
-		stateNumericANSICode = new Integer(fields[0]);
+		stateNumericANSICode = new Byte(fields[0]);
 		statePostalCode = fields[1];
 		name = fields[2];
 		gnisFeatureCode = new Integer(fields[3]);
 	}
 
 
-	public int getStateNumericANSICode() {
+	public byte getStateNumericANSICode() {
 		return stateNumericANSICode;
 	}
 
 
-	public void setStateNumericANSICode(int stateNumericANSICode) {
+	public void setStateNumericANSICode(byte stateNumericANSICode) {
 		this.stateNumericANSICode = stateNumericANSICode;
 	}
 
