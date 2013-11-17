@@ -16,6 +16,7 @@
 			in Eclipse -->
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<geotools.version>10.1</geotools.version>
+		<jena.version>2.11.0</jena.version>
 	</properties>
 	<build>
 		<plugins>
