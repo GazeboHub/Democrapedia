@@ -14,7 +14,8 @@ public class OntToolCensusStates {
 
 		CSVReader reader = null;
 		try {
-			reader = new CSVReader(new FileReader(pathname));
+			reader = new CSVReader(new FileReader(pathname),'|');
+			reader.readNext(); // skip initial header line
 			while ((buffer = reader.readNext()) != null) {
 				table.addStateInfo(buffer);
 			}
