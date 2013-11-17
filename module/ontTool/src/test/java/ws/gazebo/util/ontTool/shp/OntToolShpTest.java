@@ -34,7 +34,7 @@ public class OntToolShpTest {
 	@Test
 	public final void testOpenShpDataStore() {
 		DataStore ds = OntToolShp.openShpDataStore(shpTestFile);
-		printFeatureProperties(ds);
+		// printFeatureProperties(ds);
 		ds.dispose();
 
 	}
