@@ -34,15 +34,23 @@ public class OntToolShpTest {
 	@Test
 	public final void testOpenShpDataStore() {
 		DataStore ds = OntToolShp.openShpDataStore(shpTestFile);
+		printFeatureProperties(ds);
+		ds.dispose();
+
+	}
+
+	public static final void printFeatureProperties(DataStore ds) {
 		try {
 			String theType = ds.getTypeNames()[0];
 			FeatureIterator<Feature> it = OntToolShp.getFeatures(theType, ds);
 			try {
 				while (it.hasNext()) {
 					Feature f = it.next();
-					// NB: getName() returns the same result, always
+					// NB: on the statesp020 shapefile, getName() returns the
+					// same result, regardless of feature - name value
+					// "statesp020"
 					System.out.println("Feature name: " + f.getName());
-					// getIdentifier returns a unique result
+					// getIdentifier returns a result unique to the shapefile
 					System.out.println("Feature ID: " + f.getIdentifier());
 					FeatureId fid = f.getIdentifier();
 					// NB: getType() returns a string containing something
@@ -53,12 +61,21 @@ public class OntToolShpTest {
 						Property p = pit.next();
 						// FIXME: always skip feature named the_geom
 						if (p.getName().toString() != "the_geom") {
-							System.out.println("Feature " + fid
-									+ " Property " + p.getName() + " Value: "
-									+ p.getValue());
+							System.out.println("Feature " + fid + " Property "
+									+ p.getName() + " Value: " + p.getValue());
 						}
 					}
-
+					// Observations:
+					//
+					// * Feature Property STATE_FIPS serves as a PRIMARY KEY for
+					// joining the census table with the statesp020 information
+					//
+					// * For purpose of the SGov structural/regional ontologies,
+					// after the census table is loaded, then the statesp020
+					// file should only be needed for computing the
+					// "order admitted" value (Feature property ORDER_ADM here)
+					// and the "date admitted" value, from the feature
+					// properties (here) YEAR_ADM, MONTH_ADM, DAY_ADM
 				}
 			} finally {
 				it.close();
