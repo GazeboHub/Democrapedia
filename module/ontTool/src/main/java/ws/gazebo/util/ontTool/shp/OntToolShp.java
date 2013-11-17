@@ -25,6 +25,11 @@ public class OntToolShp {
 
 	}
 
+	public static DataStore openShpDataStore(String pathname) {
+		File f = new File(pathname);
+		return openShpDataStore(f);
+	}
+	
 	public static DataStore openShpDataStore(File f) {
 		Map<String, Serializable> m = null;
 		try {
