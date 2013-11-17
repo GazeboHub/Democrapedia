@@ -8,8 +8,12 @@ import java.util.Collections;
 import java.util.Map;
 
 import org.geotools.data.DataStore;
+import org.geotools.data.FeatureSource;
 import org.geotools.data.FileDataStoreFactorySpi;
 import org.geotools.data.FileDataStoreFinder;
+import org.geotools.feature.FeatureCollection;
+import org.geotools.feature.FeatureIterator;
+import org.opengis.feature.Feature;
 
 public class OntToolShp {
 
@@ -38,4 +42,10 @@ public class OntToolShp {
 		return ds;
 	}
 
+	public static FeatureIterator<Feature> getFeatures (String typeName, DataStore ds) throws IOException {
+		FeatureSource<?, ?> fs = ds.getFeatureSource(typeName);
+		FeatureCollection col = fs.getFeatures();
+		FeatureIterator<Feature> it = col.features();
+		return it;
+	}
 }
