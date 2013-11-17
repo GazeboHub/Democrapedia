@@ -9,6 +9,7 @@
 		<groupId>ws.gazebo.democrapedia</groupId>
 		<artifactId>democrapedia</artifactId>
 		<version>1.0.1-SNAPSHOT</version>
+		<relativePath>../..</relativePath>
 	</parent>
 
 	<dependencies>

@@ -8,6 +8,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import ws.gazebo.util.ontTool.jena.VFSFileManager;
+
 import com.hp.hpl.jena.ontology.OntDocumentManager;
 import com.hp.hpl.jena.ontology.OntModel;
 import com.hp.hpl.jena.rdf.model.Model;
@@ -28,20 +30,19 @@ public class StateTableManagerTest {
 		OntDocumentManager mgr = OntDocumentManager.getInstance();
 		// trying to load the etc/location-mapping.n3, such that should be
 		// available in the classpath of the 'ontologies' module
-		
-		URL mappingURL = this.getClass().getClassLoader().getResource("etc/location-mapping.n3");
-		System.out.println("Configuring model factory with " + mappingURL);
-		
-		mgr.setFileManager(new ClasspathFileManager()); // DO SECOND, after configure(..)
-		Model map = ModelFactory.createOntologyModel().read(mappingURL.toString(), "N3");
-		// map is null - that's troublesome.
+
+		mgr.setFileManager(new VFSFileManager()); // !
+		Model map = ModelFactory.createOntologyModel().read(
+				"etc/location-mapping.n3", "N3");
+		// map is null - the filename translation is not working across the classpath - this is useless
 		mgr.configure(map);
-		
+
 		OntModel m = ModelFactory.createOntologyModel();
 		// OntDocumentManager dm = m.getDocumentManager();
-		
+
 		String GNIS_ONT_URI = "http://www.gazebo.ws/ont/featuresGNIS.rdf";
-		System.out.println("Attempting to read " + mgr.doAltURLMapping(GNIS_ONT_URI));
+		System.out.println("Attempting to read "
+				+ mgr.doAltURLMapping(GNIS_ONT_URI));
 		m.read(GNIS_ONT_URI);
 		System.out.println("Foo: " + m.getOntClass(GNIS_ONT_URI + "#Feature"));
 

@@ -9,6 +9,7 @@
 		<groupId>ws.gazebo.democrapedia</groupId>
 		<artifactId>democrapedia</artifactId>
 		<version>1.0.1-SNAPSHOT</version>
+		<relativePath>../..</relativePath>
 	</parent>
 
 	<dependencies>
@@ -36,6 +37,11 @@
 			<groupId>org.apache.jena</groupId>
 			<artifactId>jena-core</artifactId>
 			<version>${jena.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-vfs2</artifactId>
+			<version>2.0</version>
 		</dependency>
 	</dependencies>
 
