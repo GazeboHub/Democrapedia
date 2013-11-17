@@ -24,10 +24,12 @@ public final class StateInfo {
 	// ^ UNIQUE, "Alternate key"
 	
 	// cf. http://nationalatlas.gov/mld/statesp.html
-	byte orderAdmittedUnion;
-	byte dayAdmittedUnion;
-	byte monthAdmittedUnion;
-	short yearAdmittedUnion;
+	// '0' in any of these values shall indicate "Not a state"
+	// see cf. reference
+	byte orderAdmittedUnion = 0;
+	byte dayAdmittedUnion = 0;
+	byte monthAdmittedUnion = 0;
+	short yearAdmittedUnion = 0;
 	
 
 	public StateInfo(String[] fields) {
