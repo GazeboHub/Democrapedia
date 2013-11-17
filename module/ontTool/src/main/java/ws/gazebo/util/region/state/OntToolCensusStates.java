@@ -7,10 +7,10 @@ import au.com.bytecode.opencsv.CSVReader;
 
 public class OntToolCensusStates {
 
-	public static final StateInfoTable readStateInfo(String pathname)
+	public static final StateTable readStateInfo(String pathname)
 			throws IOException {
 		String[] buffer;
-		StateInfoTable table = new StateInfoTable();
+		StateTable table = new StateTable();
 
 		CSVReader reader = null;
 		try {

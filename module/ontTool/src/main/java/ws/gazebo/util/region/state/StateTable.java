@@ -3,14 +3,12 @@ package ws.gazebo.util.region.state;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class StateInfoTable {
+public class StateTable {
 	/**
 	 * 
 	 */
 	@SuppressWarnings("unused")
 	private static final long serialVersionUID = -1L;
-
-	private static StateInfoTable tableInstance;
 	
 	ArrayList<StateInfo> table;
 	HashMap<Byte, StateInfo> fips52map;
@@ -22,11 +20,11 @@ public class StateInfoTable {
 	 *      href="http://www.census.gov/geo/reference/ansi_statetables.html">ANSI
 	 *      state table data</a>, US Department of Census.
 	 */
-	public StateInfoTable() {
+	public StateTable() {
 		this(57);
 	}
 
-	public StateInfoTable(int expectedEntriesCount) {
+	public StateTable(int expectedEntriesCount) {
 		table = new ArrayList<StateInfo>(expectedEntriesCount);
 		fips52map = new HashMap<Byte, StateInfo>(expectedEntriesCount);
 	}
@@ -58,14 +56,6 @@ public class StateInfoTable {
 	 */
 	public StateInfo getStateInfo(byte fips52code) {
 		return fips52map.get(fips52code);
-	}
-
-	public static final StateInfoTable getTableInstance() {
-		return tableInstance;
-	}
-
-	public static final void setTableInstance(StateInfoTable tableInstance) {
-		StateInfoTable.tableInstance = tableInstance;
 	}
 
 }
