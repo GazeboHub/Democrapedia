@@ -14,10 +14,21 @@ public class VFSFileManager extends FileManager {
 	private FileSystemManager fsMgr;
 	private File baseFile;
 
+	/**
+	 * Initialize a file manager with base filename deriving from the system
+	 * property "user.dir"
+	 */
 	public VFSFileManager() {
 		this(new File(System.getProperty("user.dir")));
 	}
 
+	/**
+	 * Initialize a file manager with base filename deriving from
+	 * {@code baseFile}
+	 * 
+	 * @param baseFile
+	 *            file object representing the base filename
+	 */
 	public VFSFileManager(File baseFile) {
 		super();
 		try {
@@ -29,6 +40,14 @@ public class VFSFileManager extends FileManager {
 		this.baseFile = baseFile;
 	}
 
+	/**
+	 * Resolve {@code filenameOrURI} using VFS
+	 * {@link FileSystemManager#resolveFile(String)}. This method will use this
+	 * instance's {@link #baseFile} as a base filename if the input denotes a
+	 * relative pathname
+	 * 
+	 * @return the file's pathname as a string, or null on event of error
+	 */
 	@Override
 	public String mapURI(String filenameOrURI) {
 		System.err.println("Mapping input " + filenameOrURI);

@@ -2,8 +2,6 @@ package ws.gazebo.util.region.state;
 
 import static org.junit.Assert.*;
 
-import java.net.URL;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -31,10 +29,14 @@ public class StateTableManagerTest {
 		// trying to load the etc/location-mapping.n3, such that should be
 		// available in the classpath of the 'ontologies' module
 
-		mgr.setFileManager(new VFSFileManager()); // !
+		mgr.setFileManager(new VFSFileManager()); // set custom file manager
+		// Note that the VFSFileManager does not provide support for mapping
+		// pathnames onto the classpath, however.
+		
 		Model map = ModelFactory.createOntologyModel().read(
 				"etc/location-mapping.n3", "N3");
-		// map is null - the filename translation is not working across the classpath - this is useless
+		// map is null - the filename translation is not working across the
+		// classpath - this is useless
 		mgr.configure(map);
 
 		OntModel m = ModelFactory.createOntologyModel();
