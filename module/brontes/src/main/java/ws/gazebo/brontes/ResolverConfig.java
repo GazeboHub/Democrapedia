@@ -17,6 +17,7 @@ public class ResolverConfig {
 
 	public static File USER_M2_DIRECTORY = new File(
 			System.getProperty("user.home"), ".m2");
+	public static File USER_M2_DEFAULT_LOCAL_REPOSITORY = new File(USER_M2_DIRECTORY, "repository");
 	public static File USER_SETTINGS_FILE = new File(USER_M2_DIRECTORY,
 			"settings.xml");
 
@@ -105,10 +106,8 @@ public class ResolverConfig {
 		if (s == null) {
 			s = loadSettingsDefault();
 			setSettings(s);
-			return s;
-		} else {
-			return s;
 		}
+		return s;
 	}
 
 	/**
@@ -143,7 +142,8 @@ public class ResolverConfig {
 	 */
 	public File getLocalRepository() {
 		Settings s = getSettings();
-		return new File(s.getLocalRepository());
+		String repo = s.getLocalRepository();
+		return new File(repo);
 	}
 
 	/**
@@ -153,13 +153,13 @@ public class ResolverConfig {
 	 * </p>
 	 * <p>
 	 * This method returns the {@link Settings} object, not modifying any fields
-	 * of the containing instance. This method needs a non-null value from
-	 * {@link #getSettingsBuilder()}
+	 * of the containing {@link ResolverConfig} instance. This method needs a
+	 * non-null value from {@link #getSettingsBuilder()}
 	 * </p>
 	 * 
 	 * @return the {@link Settings} object
 	 * @throws SettingsBuildingException
-	 *             if the settings could not be built
+	 *             if the settings cannot be built
 	 * @see <ul>
 	 *      <li>{@link #ensureSettingsDefault()} which calls this method</li>
 	 *      <li><a href="http://maven.apache.org/settings.html">Maven - Settings
@@ -175,7 +175,17 @@ public class ResolverConfig {
 			r.setGlobalSettingsFile(gs);
 		}
 		Settings s = getSettingsBuilder().build(r).getEffectiveSettings(); // throws
-																			// _
+
+		// Note: Whatever may seem to be suggested in the Javadoc of
+		// the method Settings#getLocalRepository(), nothing is actually
+		// initializing that property within the Settings class. So, this method
+		// initializes a suitable value to the property, initializing it to such
+		// a value as suggested in the javadoc of that other method in that
+		// other class
+		//
+		// with regards to: maven-settings, artifact version 3.1.1
+		s.setLocalRepository(USER_M2_DEFAULT_LOCAL_REPOSITORY.toString());
+		
 		SettingsDecryptionRequest sdr = new DefaultSettingsDecryptionRequest(s);
 		SettingsDecryptionResult sdrResult = getSettingsDecrypter()
 				.decrypt(sdr);
