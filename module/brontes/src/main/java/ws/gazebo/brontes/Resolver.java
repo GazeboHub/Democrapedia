@@ -31,7 +31,7 @@ import org.eclipse.aether.spi.connector.transport.TransporterFactory;
 import org.eclipse.aether.spi.locator.ServiceLocator;
 import org.eclipse.aether.transport.wagon.WagonTransporterFactory;
 
-public class Foo {
+public class Resolver {
 
 	public static File USER_M2_DIRECTORY = new File(
 			System.getProperty("user.home"), ".m2");
@@ -41,7 +41,7 @@ public class Foo {
 	ServiceLocator serviceLocator;
 	Settings settings = null;
 
-	public Foo() {
+	public Resolver() {
 		super();
 		DefaultSettingsBuilderFactory sbf = new DefaultSettingsBuilderFactory();
 		// ^ apparently, only exists to create a default settings builder
@@ -51,7 +51,7 @@ public class Foo {
 		serviceLocator = MavenRepositorySystemUtils.newServiceLocator();
 	}
 
-	public Foo(SettingsBuilder builder, SettingsDecrypter decrypter,
+	public Resolver(SettingsBuilder builder, SettingsDecrypter decrypter,
 			ServiceLocator locator) {
 		super();
 		settingsBuilder = builder;
@@ -91,15 +91,16 @@ public class Foo {
 		// locally in the appropriate configuration locations...
 
 		// FIXME: Static/instance method discrepancy
-		Foo f = new Foo();
+		Resolver f = new Resolver();
 		RepositorySystem rs = configureDefaultRepositorySystem((DefaultServiceLocator) f.getServiceLocator());
 		RepositorySystemSession ses = f.newSession(rs);
 
 		try {
 			ArtifactRequest r = new ArtifactRequest();
 			r.setArtifact(new DefaultArtifact("org.apache.maven:maven-model:3.1.0"));
-			ArtifactResult result = rs.resolveArtifact(ses, r);
-			System.out.println("Resolved: " + result.getArtifact().toString());
+			ArtifactResult result = rs.resolveArtifact(ses, r); // query part
+			// NB: The 'result' does not have a pathname (?!)			
+			System.out.println("Resolved: " + result.getArtifact() + " in " + result.getRepository());
 		} catch (ArtifactResolutionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
