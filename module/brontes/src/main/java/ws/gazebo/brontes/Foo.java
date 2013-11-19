@@ -1,6 +1,7 @@
 package ws.gazebo.brontes;
 
 import java.io.File;
+import java.util.ServiceLoader;
 
 import org.apache.maven.repository.internal.MavenRepositorySystemUtils;
 import org.apache.maven.settings.Settings;
@@ -27,6 +28,7 @@ import org.eclipse.aether.resolution.ArtifactResolutionException;
 import org.eclipse.aether.resolution.ArtifactResult;
 import org.eclipse.aether.spi.connector.RepositoryConnectorFactory;
 import org.eclipse.aether.spi.connector.transport.TransporterFactory;
+import org.eclipse.aether.spi.locator.ServiceLocator;
 import org.eclipse.aether.transport.wagon.WagonTransporterFactory;
 
 public class Foo {
@@ -36,6 +38,7 @@ public class Foo {
 
 	SettingsBuilder settingsBuilder;
 	SettingsDecrypter settingsDecrypter;
+	ServiceLocator serviceLocator;
 	Settings settings = null;
 
 	public Foo() {
@@ -44,12 +47,16 @@ public class Foo {
 		// ^ apparently, only exists to create a default settings builder
 		settingsBuilder = sbf.newInstance();
 		settingsDecrypter = new DefaultSettingsDecrypter();
+		// FIXME: Decouple this dependency on MavenRepositorySystemUtils ? 
+		serviceLocator = MavenRepositorySystemUtils.newServiceLocator();
 	}
 
-	public Foo(SettingsBuilder builder, SettingsDecrypter decrypter) {
+	public Foo(SettingsBuilder builder, SettingsDecrypter decrypter,
+			ServiceLocator locator) {
 		super();
 		settingsBuilder = builder;
 		settingsDecrypter = decrypter;
+		serviceLocator = locator;
 	}
 
 	public SettingsBuilder getSettingsBuilder() {
@@ -67,21 +74,30 @@ public class Foo {
 	public void setSettingsDecrypter(SettingsDecrypter settingsDecrypter) {
 		this.settingsDecrypter = settingsDecrypter;
 	}
+	
+
+	public ServiceLocator getServiceLocator() {
+		return serviceLocator;
+	}
+
+	public void setServiceLocator(ServiceLocator serviceLocator) {
+		this.serviceLocator = serviceLocator;
+	}
 
 	public static void main(String[] args) {
 		// cf.
-		// http://blog.sonatype.com/people/2011/01/how-to-use-aether-in-maven-plugins/#.UorRunVDvNI
-		ArtifactRequest r = new ArtifactRequest();
+		// http://blog.sonatype.com/people/2011/01/how-to-use-aether-in-maven-plugins/
 		// NOTE: This does not download archives, only resolves those that exist
 		// locally in the appropriate configuration locations...
-		r.setArtifact(new DefaultArtifact("org.apache.maven:maven-model:3.1.0"));
 
 		// FIXME: Static/instance method discrepancy
-		RepositorySystem rs = newDefaultRepositorySystem();
 		Foo f = new Foo();
+		RepositorySystem rs = configureDefaultRepositorySystem((DefaultServiceLocator) f.getServiceLocator());
 		RepositorySystemSession ses = f.newSession(rs);
 
 		try {
+			ArtifactRequest r = new ArtifactRequest();
+			r.setArtifact(new DefaultArtifact("org.apache.maven:maven-model:3.1.0"));
 			ArtifactResult result = rs.resolveArtifact(ses, r);
 			System.out.println("Resolved: " + result.getArtifact().toString());
 		} catch (ArtifactResolutionException e) {
@@ -164,13 +180,8 @@ public class Foo {
 
 	}
 
-	public static RepositorySystem newDefaultRepositorySystem() {
-		// cf. http://wiki.eclipse.org/Aether/Setting_Aether_Up
-		// HOW MANY FIELDS TO SET...?
-		// FIXME: add serviceLocator as an instance field
-		DefaultServiceLocator loc = MavenRepositorySystemUtils
-				.newServiceLocator();
-
+	public static RepositorySystem configureDefaultRepositorySystem(DefaultServiceLocator loc) {
+		// cf. http://wiki.eclipse.org/Aether/Setting_Aether_Up		
 		loc.addService(RepositoryConnectorFactory.class,
 				BasicRepositoryConnectorFactory.class);
 		loc.addService(TransporterFactory.class, WagonTransporterFactory.class);
