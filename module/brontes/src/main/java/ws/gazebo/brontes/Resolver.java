@@ -1,6 +1,7 @@
 package ws.gazebo.brontes;
 
 import org.apache.maven.repository.internal.MavenRepositorySystemUtils;
+import org.apache.maven.settings.Settings;
 import org.apache.maven.settings.building.SettingsBuildingException;
 import org.eclipse.aether.DefaultRepositorySystemSession;
 import org.eclipse.aether.RepositorySystem;
@@ -76,10 +77,21 @@ public class Resolver {
 		return resolve(a);
 	}
 
+	/**
+	 * Ensure that this instance is configured with a
+	 * {@link RepositorySystemSession}. When {@link #getSession()} returns
+	 * {@code null}, this method calls {@link #newDefaultSession()} and sets the
+	 * resulting session object as the {@link RepositorySystemSession} for the
+	 * instance, then returns the session object. Else, this method returns the
+	 * non-null result of the initial call to {@link #getSession()}
+	 * 
+	 * @return the {@link RepositorySystemSession} object for this
+	 *         {@link Resolver}
+	 */
 	public RepositorySystemSession ensureSession() {
 		RepositorySystemSession s = getSession();
 		if (s == null) {
-			s = newDefaultSession(getRepositorySystem());
+			s = newDefaultSession();
 			setSession(s);
 		}
 		return s;
@@ -114,53 +126,62 @@ public class Resolver {
 	}
 
 	public static RepositorySystem makeDefaultRepositorySystem() {
-		return makeDefaultRepositorySystem(MavenRepositorySystemUtils
-				.newServiceLocator());
-	}
-
-	public static RepositorySystem makeDefaultRepositorySystem(
-			DefaultServiceLocator loc) {
 		// cf. http://wiki.eclipse.org/Aether/Setting_Aether_Up
+		// FIXME: Awkward method dispatch finnagle (not cleanly modular)
+		DefaultServiceLocator loc = MavenRepositorySystemUtils
+				.newServiceLocator();
 		loc.addService(RepositoryConnectorFactory.class,
 				BasicRepositoryConnectorFactory.class);
 		loc.addService(TransporterFactory.class, WagonTransporterFactory.class);
 		return loc.getService(RepositorySystem.class);
+
 	}
 
-	public RepositorySystemSession newDefaultSession(RepositorySystem sys) {
-		// cf
+	public RepositorySystemSession newDefaultSession() {
+		// Point of reference:
 		// http://wiki.eclipse.org/Aether/Creating_a_Repository_System_Session
-		// "creating such a session that mimics Maven's setup"
-
-		// FIXME: How can the 'session' be handled so as to couple it with
-		// User's Maven setings?
+		// namely, "creating such a session that mimics Maven's setup"
+		//
+		// That pattern has been refactored here for a more modular design
 		DefaultRepositorySystemSession session = MavenRepositorySystemUtils
 				.newSession();
-
-		transferSettings(session, sys);
-
-		session.setReadOnly(); // FIXME : Note that call, in the documentation
+		configureSession(session);
+		// session.setReadOnly(); // Note that that will not be called here
 		return session;
 	}
 
-	public void transferLocalRepository(DefaultRepositorySystemSession session,
-			RepositorySystem rs) {
+	/**
+	 * Set the {@link LocalRepositoryManager} for the {@code session}, based on
+	 * the result of {@link ResolverConfig#getLocalRepository()} for the
+	 * {@link ResolverConfig} of this instance
+	 * 
+	 * @param session
+	 *            the session instance to configure
+	 */
+	public void configureLocalRepository(DefaultRepositorySystemSession session) {
 		// transfer local repository
 		LocalRepository localRepo = new LocalRepository(getConfig()
 				.getLocalRepository());
-		LocalRepositoryManager lmgr = rs.newLocalRepositoryManager(session,
+		RepositorySystem sys = getRepositorySystem();
+		LocalRepositoryManager lmgr = sys.newLocalRepositoryManager(session,
 				localRepo);
 		session.setLocalRepositoryManager(lmgr);
 	}
 
-	public void transferSettings(DefaultRepositorySystemSession session,
-			RepositorySystem rs) {
-		// session.setFoo(getConfig.getSettings().getFoo)
-		// ^ FIXME call that many times, to transfer settings from the Settings
-		// object onto the Session object, manually
-
-		transferLocalRepository(session, rs);
-
+	/**
+	 * Ensure that the {@code session} is configured for this {@link Resolver}
+	 * and its {@link ResolverConfig}
+	 * 
+	 * @param session
+	 *            the {@link DefaultRepositorySystemSession} instance to
+	 *            configure
+	 */
+	public void configureSession(DefaultRepositorySystemSession session) {
+		// Note that it may be unclear as to whether or not any more settings
+		// should be transferred from the ResolverConfig's settings object into
+		// the session. At least the local repository info must be transferred,
+		// or else the resolver will be unable to resolve artifacts
+		configureLocalRepository(session);
 	}
 
 }
