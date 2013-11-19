@@ -114,7 +114,7 @@ public class Resolver {
 
 		try {
 			// FIXME: Does not download, only resolves existing resources
-			// (need to copy settings over)
+			// (need to copy settings over?)
 			ArtifactResult result = resolver
 					.resolve("org.apache.maven:maven-model:3.1.0");
 			System.out.println("Resolved: " + result.getArtifact().getFile());
@@ -125,14 +125,33 @@ public class Resolver {
 
 	}
 
-	public static RepositorySystem makeDefaultRepositorySystem() {
-		// cf. http://wiki.eclipse.org/Aether/Setting_Aether_Up
-		// FIXME: Awkward method dispatch finnagle (not cleanly modular)
+	public static <C extends RepositoryConnectorFactory, T extends TransporterFactory> DefaultServiceLocator makeDefaultServiceLocator(
+			Class<C> connectorFactoryClass, Class<T> transporterFactoryClass) {
 		DefaultServiceLocator loc = MavenRepositorySystemUtils
 				.newServiceLocator();
-		loc.addService(RepositoryConnectorFactory.class,
-				BasicRepositoryConnectorFactory.class);
-		loc.addService(TransporterFactory.class, WagonTransporterFactory.class);
+		loc.addService(RepositoryConnectorFactory.class, connectorFactoryClass);
+		loc.addService(TransporterFactory.class, transporterFactoryClass);
+		return loc;
+	}
+
+	/**
+	 * Create and initialize a {@link DefaultServiceLocator} with a
+	 * {@link BasicRepositoryConnectorFactory} and a
+	 * {@link WagonTransporterFactory}
+	 * 
+	 * @return the {@link RepositorySystem} assigned to the
+	 *         {@link DefaultServiceLocator}
+	 */
+	public static RepositorySystem makeDefaultRepositorySystem() {
+		// cf. http://wiki.eclipse.org/Aether/Setting_Aether_Up
+
+		DefaultServiceLocator loc = makeDefaultServiceLocator(
+				BasicRepositoryConnectorFactory.class,
+				WagonTransporterFactory.class);
+		// ^ FIXME: Is that enough to ensure availability of HTTP transport?
+		// FIXME: see also
+		// * WagonTransporterFactory#setWagonConfigurator(...)
+		// * WagonTransporterFactory#setWagonProvider(...)
 		return loc.getService(RepositorySystem.class);
 
 	}
