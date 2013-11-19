@@ -31,32 +31,85 @@ import org.eclipse.aether.spi.connector.transport.TransporterFactory;
 import org.eclipse.aether.spi.locator.ServiceLocator;
 import org.eclipse.aether.transport.wagon.WagonTransporterFactory;
 
-public class Resolver {
+public class ResolverConfig {
 
 	public static File USER_M2_DIRECTORY = new File(
 			System.getProperty("user.home"), ".m2");
+	public static File USER_SETTINGS_FILE = new File(USER_M2_DIRECTORY,
+			"settings.xml");
 
 	SettingsBuilder settingsBuilder;
 	SettingsDecrypter settingsDecrypter;
-	ServiceLocator serviceLocator;
 	Settings settings = null;
 
-	public Resolver() {
+	public static void main(String[] args) {
+		// cf.
+		// http://blog.sonatype.com/people/2011/01/how-to-use-aether-in-maven-plugins/
+		// NOTE: This does not download archives, only resolves those that exist
+		// locally in the appropriate configuration locations...
+
+		// FIXME: Static/instance method discrepancy
+		ResolverConfig f = new ResolverConfig();
+		RepositorySystem rs = makeDefaultRepositorySystem();
+		RepositorySystemSession ses = f.newSession(rs);
+		// ^ fixme: make session an instance field, or decouple the repository
+		// system framework from the session configuration framework as
+		// represented in this file
+
+		try {
+			ArtifactRequest r = new ArtifactRequest();
+			r.setArtifact(new DefaultArtifact(
+					"org.apache.maven:maven-model:3.1.0"));
+			ArtifactResult result = rs.resolveArtifact(ses, r); // query part
+			System.out.println("Resolved: " + result.getArtifact().getFile());
+		} catch (ArtifactResolutionException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public static RepositorySystem makeDefaultRepositorySystem() {
+		return makeDefaultRepositorySystem(MavenRepositorySystemUtils
+				.newServiceLocator());
+	}
+
+	public static RepositorySystem makeDefaultRepositorySystem(
+			DefaultServiceLocator loc) {
+		// cf. http://wiki.eclipse.org/Aether/Setting_Aether_Up
+		loc.addService(RepositoryConnectorFactory.class,
+				BasicRepositoryConnectorFactory.class);
+		loc.addService(TransporterFactory.class, WagonTransporterFactory.class);
+		return loc.getService(RepositorySystem.class);
+	}
+
+	/**
+	 * @return file representing "$M2_HOME/conf/settings.xml" or null if M2_HOME
+	 *         is not defined in the environment
+	 */
+	public static File getGlobalSettingsFile() {
+		// cf. http://maven.apache.org/settings.html
+		String m2home = System.getenv("M2_HOME");
+		if (m2home != null) {
+			return new File(new File(m2home, "conf"), "settings.xml");
+		} else {
+			return null;
+		}
+	}
+
+	public ResolverConfig() {
 		super();
 		DefaultSettingsBuilderFactory sbf = new DefaultSettingsBuilderFactory();
 		// ^ apparently, only exists to create a default settings builder
 		settingsBuilder = sbf.newInstance();
 		settingsDecrypter = new DefaultSettingsDecrypter();
-		// FIXME: Decouple this dependency on MavenRepositorySystemUtils ? 
-		serviceLocator = MavenRepositorySystemUtils.newServiceLocator();
+		// NB: dependency on MavenRepositorySystemUtils
 	}
 
-	public Resolver(SettingsBuilder builder, SettingsDecrypter decrypter,
-			ServiceLocator locator) {
+	public ResolverConfig(SettingsBuilder builder, SettingsDecrypter decrypter) {
 		super();
 		settingsBuilder = builder;
 		settingsDecrypter = decrypter;
-		serviceLocator = locator;
 	}
 
 	public SettingsBuilder getSettingsBuilder() {
@@ -74,58 +127,6 @@ public class Resolver {
 	public void setSettingsDecrypter(SettingsDecrypter settingsDecrypter) {
 		this.settingsDecrypter = settingsDecrypter;
 	}
-	
-
-	public ServiceLocator getServiceLocator() {
-		return serviceLocator;
-	}
-
-	public void setServiceLocator(ServiceLocator serviceLocator) {
-		this.serviceLocator = serviceLocator;
-	}
-
-	public static void main(String[] args) {
-		// cf.
-		// http://blog.sonatype.com/people/2011/01/how-to-use-aether-in-maven-plugins/
-		// NOTE: This does not download archives, only resolves those that exist
-		// locally in the appropriate configuration locations...
-
-		// FIXME: Static/instance method discrepancy
-		Resolver f = new Resolver();
-		RepositorySystem rs = configureDefaultRepositorySystem((DefaultServiceLocator) f.getServiceLocator());
-		RepositorySystemSession ses = f.newSession(rs);
-
-		try {
-			ArtifactRequest r = new ArtifactRequest();
-			r.setArtifact(new DefaultArtifact("org.apache.maven:maven-model:3.1.0"));
-			ArtifactResult result = rs.resolveArtifact(ses, r); // query part
-			// NB: The 'result' does not have a pathname (?!)			
-			System.out.println("Resolved: " + result.getArtifact() + " in " + result.getRepository());
-		} catch (ArtifactResolutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
-
-	public static File getUserSettingsFile() {
-		// cf. http://maven.apache.org/settings.html
-		return new File(USER_M2_DIRECTORY, "settings.xml");
-	}
-
-	/**
-	 * @return file representing "$M2_HOME/conf/settings.xml" or null if M2_HOME
-	 *         is not defined in the environment
-	 */
-	public static File getGlobalSettingsFile() {
-		// cf. http://maven.apache.org/settings.html
-		String m2home = System.getenv("M2_HOME");
-		if (m2home != null) {
-			return new File(new File(m2home, "conf"), "settings.xml");
-		} else {
-			return null;
-		}
-	}
 
 	/**
 	 * Load global and user settings, including proxy information
@@ -137,7 +138,7 @@ public class Resolver {
 	public Settings ensureSettings() throws SettingsBuildingException {
 		if (settings == null) {
 			DefaultSettingsBuildingRequest r = new DefaultSettingsBuildingRequest();
-			r.setUserSettingsFile(getUserSettingsFile());
+			r.setUserSettingsFile(USER_SETTINGS_FILE);
 			File gs = getGlobalSettingsFile();
 			if (gs != null) {
 				r.setGlobalSettingsFile(gs);
@@ -179,14 +180,6 @@ public class Resolver {
 			}
 		}
 
-	}
-
-	public static RepositorySystem configureDefaultRepositorySystem(DefaultServiceLocator loc) {
-		// cf. http://wiki.eclipse.org/Aether/Setting_Aether_Up		
-		loc.addService(RepositoryConnectorFactory.class,
-				BasicRepositoryConnectorFactory.class);
-		loc.addService(TransporterFactory.class, WagonTransporterFactory.class);
-		return loc.getService(RepositorySystem.class);
 	}
 
 	public RepositorySystemSession newSession(RepositorySystem system) {
