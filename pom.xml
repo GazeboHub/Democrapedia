@@ -10,6 +10,7 @@
 		<module>module/sgov</module>
 		<module>module/ontTool</module>
 		<module>module/ontologies</module>
+		<module>module/brontes</module>
 	</modules>
 	<properties>
 		<!-- set UTF-8 encoding here, to avoid "Using platform encoding" warning 
