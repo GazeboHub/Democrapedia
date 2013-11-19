@@ -116,14 +116,38 @@ public class Resolver {
 
 		try {
 			// FIXME: Does not download, only resolves existing resources
-			// FIXME: May need to configure the Wagon framework, for artifact transport
+			// FIXME: May need to configure the Wagon framework, for artifact
+			// transport
 			//
 			// See also
 			// * WagonTransporterFactory#setWagonConfigurator(...)
 			// * WagonTransporterFactory#setWagonProvider(...)
 			//
-			// WagonConfigurator instance PlexusWagonConfigurator (how to configure?) 
+			// WagonConfigurator instance PlexusWagonConfigurator (how to
+			// configure?)
 			// WagonProvider instance PlexusWagonProvider (how to configure?)
+			//
+			// See also: Sisu http://www.eclipse.org/sisu/
+			// Noting,
+			// "The Plexus container is no longer maintained and users of it should start to migrate to alternatives like JSR-330."
+			// as cf. http://wiki.eclipse.org/Aether/Setting_Aether_Up
+			//
+			// So, alternately, consider adding Sisu as a dep
+			// (sisu-maven-plugin?)
+			//
+			// However, note that the comment "Documentation on the way" about
+			// Sisu does not qualify as documentation about Sisu.
+			//
+			// Furthermore, to whence does the dependency-spaghetti go, once it
+			// depeds on Sisu and therefore also Giuce?
+
+			// SEE ALSO
+			// old aether guice example - uses wagon
+			// http://git.eclipse.org/c/aether/aether-demo.git/tree/aether-demo-snippets/src/main/java/org/eclipse/aether/examples/guice/DemoAetherModule.java?id=0a9b2a53bffbbaef70992dcdb243631f1bc8e48b
+			// new aether guice example - no wagon (?)
+			// http://git.eclipse.org/c/aether/aether-demo.git/tree/aether-demo-snippets/src/main/java/org/eclipse/aether/examples/guice/DemoAetherModule.java
+
+			// Alternately, just use Aeither's own simple (but inextensible) HTTP and File transports???
 			
 			ArtifactResult result = resolver
 					.resolve("org.apache.maven:maven-model:3.1.0");
