@@ -3,6 +3,7 @@ package ws.gazebo.brontes;
 import org.apache.maven.repository.internal.MavenRepositorySystemUtils;
 import org.apache.maven.settings.Settings;
 import org.apache.maven.settings.building.SettingsBuildingException;
+import org.apache.maven.wagon.WagonConstants;
 import org.eclipse.aether.DefaultRepositorySystemSession;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
@@ -17,6 +18,7 @@ import org.eclipse.aether.resolution.ArtifactResolutionException;
 import org.eclipse.aether.resolution.ArtifactResult;
 import org.eclipse.aether.spi.connector.RepositoryConnectorFactory;
 import org.eclipse.aether.spi.connector.transport.TransporterFactory;
+import org.eclipse.aether.transport.wagon.WagonConfigurator;
 import org.eclipse.aether.transport.wagon.WagonTransporterFactory;
 
 public class Resolver {
@@ -114,7 +116,15 @@ public class Resolver {
 
 		try {
 			// FIXME: Does not download, only resolves existing resources
-			// (need to copy settings over?)
+			// FIXME: May need to configure the Wagon framework, for artifact transport
+			//
+			// See also
+			// * WagonTransporterFactory#setWagonConfigurator(...)
+			// * WagonTransporterFactory#setWagonProvider(...)
+			//
+			// WagonConfigurator instance PlexusWagonConfigurator (how to configure?) 
+			// WagonProvider instance PlexusWagonProvider (how to configure?)
+			
 			ArtifactResult result = resolver
 					.resolve("org.apache.maven:maven-model:3.1.0");
 			System.out.println("Resolved: " + result.getArtifact().getFile());
@@ -127,6 +137,7 @@ public class Resolver {
 
 	public static <C extends RepositoryConnectorFactory, T extends TransporterFactory> DefaultServiceLocator makeDefaultServiceLocator(
 			Class<C> connectorFactoryClass, Class<T> transporterFactoryClass) {
+		// FIXME: Should the service locator be stored in an instance field?
 		DefaultServiceLocator loc = MavenRepositorySystemUtils
 				.newServiceLocator();
 		loc.addService(RepositoryConnectorFactory.class, connectorFactoryClass);
@@ -153,7 +164,6 @@ public class Resolver {
 		// * WagonTransporterFactory#setWagonConfigurator(...)
 		// * WagonTransporterFactory#setWagonProvider(...)
 		return loc.getService(RepositorySystem.class);
-
 	}
 
 	public RepositorySystemSession newDefaultSession() {
