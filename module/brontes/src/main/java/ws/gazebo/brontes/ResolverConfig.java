@@ -1,35 +1,17 @@
 package ws.gazebo.brontes;
 
 import java.io.File;
-import java.util.ServiceLoader;
 
-import org.apache.maven.repository.internal.MavenRepositorySystemUtils;
 import org.apache.maven.settings.Settings;
-import org.apache.maven.settings.building.DefaultSettingsBuilder;
 import org.apache.maven.settings.building.DefaultSettingsBuilderFactory;
 import org.apache.maven.settings.building.DefaultSettingsBuildingRequest;
 import org.apache.maven.settings.building.SettingsBuilder;
 import org.apache.maven.settings.building.SettingsBuildingException;
-import org.apache.maven.settings.building.SettingsBuildingRequest;
 import org.apache.maven.settings.crypto.DefaultSettingsDecrypter;
 import org.apache.maven.settings.crypto.DefaultSettingsDecryptionRequest;
 import org.apache.maven.settings.crypto.SettingsDecrypter;
 import org.apache.maven.settings.crypto.SettingsDecryptionRequest;
 import org.apache.maven.settings.crypto.SettingsDecryptionResult;
-import org.eclipse.aether.DefaultRepositorySystemSession;
-import org.eclipse.aether.RepositorySystem;
-import org.eclipse.aether.RepositorySystemSession;
-import org.eclipse.aether.artifact.DefaultArtifact;
-import org.eclipse.aether.connector.basic.BasicRepositoryConnectorFactory;
-import org.eclipse.aether.impl.DefaultServiceLocator;
-import org.eclipse.aether.repository.LocalRepository;
-import org.eclipse.aether.resolution.ArtifactRequest;
-import org.eclipse.aether.resolution.ArtifactResolutionException;
-import org.eclipse.aether.resolution.ArtifactResult;
-import org.eclipse.aether.spi.connector.RepositoryConnectorFactory;
-import org.eclipse.aether.spi.connector.transport.TransporterFactory;
-import org.eclipse.aether.spi.locator.ServiceLocator;
-import org.eclipse.aether.transport.wagon.WagonTransporterFactory;
 
 public class ResolverConfig {
 
@@ -41,47 +23,6 @@ public class ResolverConfig {
 	SettingsBuilder settingsBuilder;
 	SettingsDecrypter settingsDecrypter;
 	Settings settings = null;
-
-	public static void main(String[] args) {
-		// cf.
-		// http://blog.sonatype.com/people/2011/01/how-to-use-aether-in-maven-plugins/
-		// NOTE: This does not download archives, only resolves those that exist
-		// locally in the appropriate configuration locations...
-
-		// FIXME: Static/instance method discrepancy
-		ResolverConfig f = new ResolverConfig();
-		RepositorySystem rs = makeDefaultRepositorySystem();
-		RepositorySystemSession ses = f.newSession(rs);
-		// ^ fixme: make session an instance field, or decouple the repository
-		// system framework from the session configuration framework as
-		// represented in this file
-
-		try {
-			ArtifactRequest r = new ArtifactRequest();
-			r.setArtifact(new DefaultArtifact(
-					"org.apache.maven:maven-model:3.1.0"));
-			ArtifactResult result = rs.resolveArtifact(ses, r); // query part
-			System.out.println("Resolved: " + result.getArtifact().getFile());
-		} catch (ArtifactResolutionException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-
-	}
-
-	public static RepositorySystem makeDefaultRepositorySystem() {
-		return makeDefaultRepositorySystem(MavenRepositorySystemUtils
-				.newServiceLocator());
-	}
-
-	public static RepositorySystem makeDefaultRepositorySystem(
-			DefaultServiceLocator loc) {
-		// cf. http://wiki.eclipse.org/Aether/Setting_Aether_Up
-		loc.addService(RepositoryConnectorFactory.class,
-				BasicRepositoryConnectorFactory.class);
-		loc.addService(TransporterFactory.class, WagonTransporterFactory.class);
-		return loc.getService(RepositorySystem.class);
-	}
 
 	/**
 	 * @return file representing "$M2_HOME/conf/settings.xml" or null if M2_HOME
@@ -97,6 +38,21 @@ public class ResolverConfig {
 		}
 	}
 
+	/**
+	 * Initialize an instance with default {@link SettingsBuilder} and
+	 * {@link SettingsDecrypter}.
+	 * 
+	 * @see <ul>
+	 *      <li>{@link DefaultSettingsBuilderFactory#newInstance()} which
+	 *      provides the value for the {@link SettingsBuilder}</li>
+	 *      <li>{@link DefaultSettingsDecrypter}, a fresh instance of which will
+	 *      provide the value of the {@link SettingsDecrypter}</li>
+	 *      <li>{@link #ensureSettingsDefault()} which <em>may</em> be called at
+	 *      least once on the initialized instance. That method <em>should</em>
+	 *      be called at least once, if no alternative {@link Settings} source
+	 *      would be provided by the application</li>
+	 *      </ul>
+	 */
 	public ResolverConfig() {
 		super();
 		DefaultSettingsBuilderFactory sbf = new DefaultSettingsBuilderFactory();
@@ -106,6 +62,13 @@ public class ResolverConfig {
 		// NB: dependency on MavenRepositorySystemUtils
 	}
 
+	/**
+	 * Initialize an instance with the specified {@link SettingsBuilder} and
+	 * {@link SettingsDecrypter} instances.
+	 * 
+	 * @param builder
+	 * @param decrypter
+	 */
 	public ResolverConfig(SettingsBuilder builder, SettingsDecrypter decrypter) {
 		super();
 		settingsBuilder = builder;
@@ -129,51 +92,77 @@ public class ResolverConfig {
 	}
 
 	/**
-	 * Load global and user settings, including proxy information
+	 * Ensure that settings are loaded and returned. If {@link #getSettings()}
+	 * returns null, calls {@link #loadSettingsDefault()} then sets the
+	 * resulting value via {@link #setSettings(Settings)} before returning the
+	 * value
 	 * 
-	 * @return the settings object
+	 * @return the {@link Settings} object
 	 * @throws SettingsBuildingException
-	 *             if the settings could not be built
 	 */
-	public Settings ensureSettings() throws SettingsBuildingException {
-		if (settings == null) {
-			DefaultSettingsBuildingRequest r = new DefaultSettingsBuildingRequest();
-			r.setUserSettingsFile(USER_SETTINGS_FILE);
-			File gs = getGlobalSettingsFile();
-			if (gs != null) {
-				r.setGlobalSettingsFile(gs);
-			}
-			Settings s = getSettingsBuilder().build(r).getEffectiveSettings(); // throws
-																				// _
-			SettingsDecryptionRequest sdr = new DefaultSettingsDecryptionRequest(
-					s);
-			SettingsDecryptionResult sdrResult = getSettingsDecrypter()
-					.decrypt(sdr);
-			s.setServers(sdrResult.getServers());
-			s.setProxies(sdrResult.getProxies());
+	public Settings ensureSettingsDefault() throws SettingsBuildingException {
+		Settings s = getSettings();
+		if (s == null) {
+			s = loadSettingsDefault();
+			setSettings(s);
 			return s;
 		} else {
-			return settings;
+			return s;
 		}
 	}
 
+	/**
+	 * Property accessor method
+	 * 
+	 * @return the {@link Settings} object
+	 * @see {@link #ensureSettingsDefault()}
+	 */
+	public Settings getSettings() {
+		return settings;
+	}
+
+	/**
+	 * Property accessor method
+	 * 
+	 * @param settings
+	 *            the {@link Settings} object
+	 * @see {@link #ensureSettingsDefault()} which presents an alternative
+	 *      method for ensuring that the instance's settings are initialized
+	 */
+	public void setSettings(Settings settings) {
+		this.settings = settings;
+	}
+
+	/**
+	 * Compute a file object for a local artifact repository. Order of
+	 * computation is as follows:
+	 * <ol>
+	 * <li>If the system property {@code "maven.repo.local"} is set, return a
+	 * file object whose pathname shall represent the value of that system
+	 * property</li>
+	 * <li>Else, if {@link #getSettings()} returns non-null and the delegate
+	 * value of {@link Settings#getLocalRepository()} on that {@link Settings}
+	 * object is non-null, return that delegate value</li>
+	 * <li>Else, return a {@link File} representing the {@code "repository"}
+	 * directory computed as a subdirectory of the static field
+	 * {@link #USER_M2_DIRECTORY}</li>
+	 * </ol>
+	 * 
+	 * @return a {@link File} object representing a local artifact repository
+	 * @see {@link #ensureSettingsDefault()} such that may be called as to
+	 *      ensure that a {@link Settings} property will be available in the
+	 *      instance, prior to this method's execution
+	 */
 	public File getLocalRepository() {
 		// cf.
 		// https://eclipse.googlesource.com/aether/aether-ant/+/ac01d8950c2202425f73c6e6c926bb2736e05b67/src/test/java/org/eclipse/aether/ant/AntBuildsTest.java
 		String localRepo;
-		Settings s = null;
-		try {
-			s = ensureSettings();
-		} catch (SettingsBuildingException e) {
-			e.printStackTrace();
-		}
 		localRepo = System.getProperty("maven.repo.local");
 		if (localRepo != null) {
 			return new File(localRepo);
 		} else {
-			localRepo = s.getLocalRepository();
-			;
-			if (localRepo != null) {
+			Settings s = getSettings();
+			if (s != null && (localRepo = s.getLocalRepository()) != null) {
 				return new File(localRepo);
 			} else {
 				return new File(USER_M2_DIRECTORY, "repository");
@@ -182,18 +171,31 @@ public class ResolverConfig {
 
 	}
 
-	public RepositorySystemSession newSession(RepositorySystem system) {
-		// cf
-		// http://wiki.eclipse.org/Aether/Creating_a_Repository_System_Session
-		// "creating such a session that mimics Maven's setup" (???)
-
-		DefaultRepositorySystemSession session = MavenRepositorySystemUtils
-				.newSession();
-
-		LocalRepository localRepo = new LocalRepository(getLocalRepository());
-
-		session.setLocalRepositoryManager(system.newLocalRepositoryManager(
-				session, localRepo));
-		return session;
+	/**
+	 * Load global and user settings, including proxy information, as per Maven
+	 * settings
+	 * 
+	 * @return the settings object
+	 * @throws SettingsBuildingException
+	 *             if the settings could not be built
+	 * @see <a href="http://maven.apache.org/settings.html">Maven - Settings
+	 *      Reference</a>
+	 * 
+	 */
+	public Settings loadSettingsDefault() throws SettingsBuildingException {
+		DefaultSettingsBuildingRequest r = new DefaultSettingsBuildingRequest();
+		r.setUserSettingsFile(USER_SETTINGS_FILE);
+		File gs = getGlobalSettingsFile();
+		if (gs != null) {
+			r.setGlobalSettingsFile(gs);
+		}
+		Settings s = getSettingsBuilder().build(r).getEffectiveSettings(); // throws
+																			// _
+		SettingsDecryptionRequest sdr = new DefaultSettingsDecryptionRequest(s);
+		SettingsDecryptionResult sdrResult = getSettingsDecrypter()
+				.decrypt(sdr);
+		s.setServers(sdrResult.getServers());
+		s.setProxies(sdrResult.getProxies());
+		return s;
 	}
 }
