@@ -137,18 +137,30 @@ public class Resolver {
 		DefaultRepositorySystemSession session = MavenRepositorySystemUtils
 				.newSession();
 
-		// session.setFoo(getConfig().getSettings().getFoo()))
+		transferSettings(session, sys);
+
+		session.setReadOnly(); // FIXME : Note that call, in the documentation
+		return session;
+	}
+
+	public void transferLocalRepository(DefaultRepositorySystemSession session,
+			RepositorySystem rs) {
+		// transfer local repository
+		LocalRepository localRepo = new LocalRepository(getConfig()
+				.getLocalRepository());
+		LocalRepositoryManager lmgr = rs.newLocalRepositoryManager(session,
+				localRepo);
+		session.setLocalRepositoryManager(lmgr);
+	}
+
+	public void transferSettings(DefaultRepositorySystemSession session,
+			RepositorySystem rs) {
+		// session.setFoo(getConfig.getSettings().getFoo)
 		// ^ FIXME call that many times, to transfer settings from the Settings
 		// object onto the Session object, manually
 
-		LocalRepository localRepo = new LocalRepository(getConfig()
-				.getLocalRepository());
-		LocalRepositoryManager lMgr = sys.newLocalRepositoryManager(session,
-				localRepo);
+		transferLocalRepository(session, rs);
 
-		session.setLocalRepositoryManager(lMgr);
-		session.setReadOnly(); // FIXME : Note that call, in the documentation
-		return session;
 	}
 
 }

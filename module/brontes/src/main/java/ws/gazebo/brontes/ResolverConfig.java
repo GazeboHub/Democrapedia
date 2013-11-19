@@ -132,19 +132,6 @@ public class ResolverConfig {
 		this.settings = settings;
 	}
 
-	/**
-	 * Delegate method onto {@link Settings#getLocalRepository()}
-	 * 
-	 * @return a {@link File} object representing the local artifact repository
-	 * @see {@link #ensureSettingsDefault()} such that may be called as to
-	 *      ensure that a {@link Settings} property will be available in the
-	 *      instance, prior to this method's execution
-	 */
-	public File getLocalRepository() {
-		Settings s = getSettings();
-		String repo = s.getLocalRepository();
-		return new File(repo);
-	}
 
 	/**
 	 * <p>
@@ -192,5 +179,24 @@ public class ResolverConfig {
 		s.setServers(sdrResult.getServers());
 		s.setProxies(sdrResult.getProxies());
 		return s;
+	}
+
+	// **** Delegate methods follow ****
+	// See also: 
+	// * Resolver.newDefaultSession()
+	// * Resolver.transferSettings(...)
+	
+	/**
+	 * Delegate method onto {@link Settings#getLocalRepository()}
+	 * 
+	 * @return a {@link File} object representing the local artifact repository
+	 * @see {@link #ensureSettingsDefault()} such that may be called as to
+	 *      ensure that a {@link Settings} property will be available in the
+	 *      instance, prior to this method's execution
+	 */
+	public File getLocalRepository() {
+		Settings s = getSettings();
+		String repo = s.getLocalRepository();
+		return new File(repo);
 	}
 }
