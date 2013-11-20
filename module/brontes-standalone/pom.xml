@@ -2,7 +2,7 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>brontes-standalone</artifactId>
-	<name>Brontes</name>
+	<name>Brontes Standalone Module</name>
 	<packaging>jar</packaging>
 
 	<parent>
@@ -77,4 +77,5 @@
 	</dependencies>
 
 
+	<description>This modulel represents a discontinued design, towards defining a stand-alone application subsetting some features of Maven, namely resource transport and resource resolvers. Further work will be continued within the brontes-maven-plugin module.</description>
 </project>
