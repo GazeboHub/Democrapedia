@@ -1,9 +1,7 @@
 package ws.gazebo.brontes;
 
 import org.apache.maven.repository.internal.MavenRepositorySystemUtils;
-import org.apache.maven.settings.Settings;
 import org.apache.maven.settings.building.SettingsBuildingException;
-import org.apache.maven.wagon.WagonConstants;
 import org.eclipse.aether.DefaultRepositorySystemSession;
 import org.eclipse.aether.RepositorySystem;
 import org.eclipse.aether.RepositorySystemSession;
@@ -18,8 +16,8 @@ import org.eclipse.aether.resolution.ArtifactResolutionException;
 import org.eclipse.aether.resolution.ArtifactResult;
 import org.eclipse.aether.spi.connector.RepositoryConnectorFactory;
 import org.eclipse.aether.spi.connector.transport.TransporterFactory;
-import org.eclipse.aether.transport.wagon.WagonConfigurator;
-import org.eclipse.aether.transport.wagon.WagonTransporterFactory;
+import org.eclipse.aether.transport.file.FileTransporterFactory;
+import org.eclipse.aether.transport.http.HttpTransporterFactory;
 
 public class Resolver {
 
@@ -34,7 +32,7 @@ public class Resolver {
 
 	public Resolver(ResolverConfig config, RepositorySystem rs) {
 		this(config);
-		repositorySystem = rs;
+		this.repositorySystem = rs;
 	}
 
 	public ResolverConfig getConfig() {
@@ -69,6 +67,8 @@ public class Resolver {
 	public ArtifactResult resolve(Artifact artifact)
 			throws ArtifactResolutionException {
 		ArtifactRequest req = new ArtifactRequest();
+		// req.setTrace(trace) // FIXME: trace ?
+		// ^ seen in org.apache.maven.repository.internal.DefaultModelResolver
 		req.setArtifact(artifact);
 		return resolve(req);
 	}
@@ -104,54 +104,51 @@ public class Resolver {
 
 		// cf.
 		// http://blog.sonatype.com/people/2011/01/how-to-use-aether-in-maven-plugins/
-		// NOTE: This does not download archives, only resolves those that exist
-		// locally in the appropriate configuration locations...
+		// http://wiki.eclipse.org/Aether
 
 		ResolverConfig cfg = new ResolverConfig();
 		cfg.ensureSettingsDefault();
 
 		RepositorySystem rs = makeDefaultRepositorySystem();
+		System.err.println("DEBUG : default rs: " + rs); // FIXME: why sometimes
+															// null?
 		Resolver resolver = new Resolver(cfg, rs);
 		resolver.ensureSession();
 
 		try {
-			// FIXME: Does not download, only resolves existing resources
-			// FIXME: May need to configure the Wagon framework, for artifact
-			// transport
-			//
-			// See also
-			// * WagonTransporterFactory#setWagonConfigurator(...)
-			// * WagonTransporterFactory#setWagonProvider(...)
-			//
-			// WagonConfigurator instance PlexusWagonConfigurator (how to
-			// configure?)
-			// WagonProvider instance PlexusWagonProvider (how to configure?)
-			//
-			// See also: Sisu http://www.eclipse.org/sisu/
-			// Noting,
-			// "The Plexus container is no longer maintained and users of it should start to migrate to alternatives like JSR-330."
-			// as cf. http://wiki.eclipse.org/Aether/Setting_Aether_Up
-			//
-			// So, alternately, consider adding Sisu as a dep
-			// (sisu-maven-plugin?)
-			//
-			// However, note that the comment "Documentation on the way" about
-			// Sisu does not qualify as documentation about Sisu.
-			//
-			// Furthermore, to whence does the dependency-spaghetti go, once it
-			// depeds on Sisu and therefore also Giuce?
 
-			// SEE ALSO
-			// old aether guice example - uses wagon
-			// http://git.eclipse.org/c/aether/aether-demo.git/tree/aether-demo-snippets/src/main/java/org/eclipse/aether/examples/guice/DemoAetherModule.java?id=0a9b2a53bffbbaef70992dcdb243631f1bc8e48b
-			// new aether guice example - no wagon (?)
-			// http://git.eclipse.org/c/aether/aether-demo.git/tree/aether-demo-snippets/src/main/java/org/eclipse/aether/examples/guice/DemoAetherModule.java
-
-			// Alternately, just use Aeither's own simple (but inextensible) HTTP and File transports???
-			
 			ArtifactResult result = resolver
-					.resolve("org.apache.maven:maven-model:3.1.0");
+					.resolve("org.apache.maven:maven-model:3.0.1");
 			System.out.println("Resolved: " + result.getArtifact().getFile());
+			System.out.println("Deleting file");
+			result.getArtifact().getFile().delete();
+			// ^ And then it crashes on *some* subsequent runs (???)
+			// as when resolving maven-model 3.1.1 and then deleting it
+			// (Maven bug?)
+			//
+			// FIXME: It's still not downloading artifacts over the network
+			//
+			// So, new plan:
+			// 1) Rename this item's Maven module -> brontes-standalone; table
+			// the design
+			// 2) Define new 'brontes' module as a POM
+			// 3) Move the brontes-standalone into the new brontes:*:pom
+			// 4) Define a new plugin, maven-ontology-plugin, in which
+
+			// A. The plugin may provide a Jena FileManager implementation,
+			// MvnFileManager
+
+			// B. The plugin shall rely on the configuration of the
+			// plugin, in order to compute each target ontology such that must
+			// be loaded within the JVM, therefore available to other ontology
+			// models
+			// cf.
+			// <config>
+			// --- <ont artfact="org.example:pizza-ont:1.0"
+			// --------- pathname="META-INF/pizza.rdf" type="OWL_MEM"/>
+			// </config>
+			// ^ such that then adds a dependency to the containing project,
+			// namely in the file org.example:pizza-ont:1.0
 		} catch (ArtifactResolutionException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -159,20 +156,10 @@ public class Resolver {
 
 	}
 
-	public static <C extends RepositoryConnectorFactory, T extends TransporterFactory> DefaultServiceLocator makeDefaultServiceLocator(
-			Class<C> connectorFactoryClass, Class<T> transporterFactoryClass) {
-		// FIXME: Should the service locator be stored in an instance field?
-		DefaultServiceLocator loc = MavenRepositorySystemUtils
-				.newServiceLocator();
-		loc.addService(RepositoryConnectorFactory.class, connectorFactoryClass);
-		loc.addService(TransporterFactory.class, transporterFactoryClass);
-		return loc;
-	}
-
 	/**
 	 * Create and initialize a {@link DefaultServiceLocator} with a
-	 * {@link BasicRepositoryConnectorFactory} and a
-	 * {@link WagonTransporterFactory}
+	 * {@link BasicRepositoryConnectorFactory}. a {@link FileTransporterFactory}
+	 * , and a {@link HttpTransporterFactory}
 	 * 
 	 * @return the {@link RepositorySystem} assigned to the
 	 *         {@link DefaultServiceLocator}
@@ -180,14 +167,41 @@ public class Resolver {
 	public static RepositorySystem makeDefaultRepositorySystem() {
 		// cf. http://wiki.eclipse.org/Aether/Setting_Aether_Up
 
-		DefaultServiceLocator loc = makeDefaultServiceLocator(
-				BasicRepositoryConnectorFactory.class,
-				WagonTransporterFactory.class);
-		// ^ FIXME: Is that enough to ensure availability of HTTP transport?
-		// FIXME: see also
-		// * WagonTransporterFactory#setWagonConfigurator(...)
-		// * WagonTransporterFactory#setWagonProvider(...)
-		return loc.getService(RepositorySystem.class);
+		// FIXME: Should the service locator be stored in an instance field?
+		DefaultServiceLocator loc = MavenRepositorySystemUtils
+				.newServiceLocator();
+
+		// Note: This does not rely on popular dependency injection models, such
+		// that would serve to obfuscate Java code with ghostly object
+		// insertions
+		loc.addService(RepositoryConnectorFactory.class,
+				BasicRepositoryConnectorFactory.class);
+
+		// FIXME : Can this add both as extensions of TransporterFactory ?
+		// Or does the second override the first?
+		loc.addService(TransporterFactory.class, FileTransporterFactory.class);
+		loc.addService(TransporterFactory.class, HttpTransporterFactory.class);
+		// ^ Not working.
+
+		// FIXME: Why is this ever returning null?
+		// Noticing the DefaultServiceLocator() constructor, it should be that
+		// an instance of the appropriate class and its implemenation is already
+		// being "injected" (rather, set, as in a hash table) into the locator
+		RepositorySystem rs = loc.getService(RepositorySystem.class);
+		if (rs == null) {
+			// FIXME: UGLY HACK. PLEASE INSERT CORRECT DEPENDECIES TO CONTINUE.
+
+			// return new DefaultRepositorySystem(); // UNINITIALIZED. INVALID.
+
+			// MAN IT SURE WOULD BE NICE TO HAVE A CONVENIENT 'NEW' METHOD
+			// AROUND, SOMEWHERE, IN THIS TRACEABLE THOUGH DISTINCTLY
+			// NON-FADDISH CODE
+
+			// FIXME "Terminal breakpoint", alternately
+			System.err.println("Null repository system. Aborting");
+			System.exit(127);
+		}
+		return rs;
 	}
 
 	public RepositorySystemSession newDefaultSession() {
