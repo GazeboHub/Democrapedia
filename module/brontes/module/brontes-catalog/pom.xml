@@ -6,10 +6,10 @@
 	<packaging>pom</packaging>
 
 	<parent>
-		<groupId>ws.gazebo.democrapedia.brontes</groupId>
 		<artifactId>brontes</artifactId>
 		<version>1.0.1-SNAPSHOT</version>
 		<relativePath>../..</relativePath>
+		<groupId>ws.gazebo.democrapedia.brontes</groupId>
 	</parent>
 
 
@@ -34,4 +34,5 @@
 	</dependencies>
 
 
+	<groupId>ws.gazebo.democrapedia.brontes.brontes-catalog</groupId>
 </project>
