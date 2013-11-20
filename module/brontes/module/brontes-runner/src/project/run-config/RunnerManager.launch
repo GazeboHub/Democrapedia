@@ -8,7 +8,7 @@
 </listAttribute>
 <stringAttribute key="org.eclipse.jdt.launching.CLASSPATH_PROVIDER" value="org.eclipse.m2e.launchconfig.classpathProvider"/>
 <stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="ws.gazebo.brontes.runner.RunnerManager"/>
-<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-f ${project_loc}/application.xml -P run  generate-resources"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-f application-test.xml -P run  generate-resources"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="brontes-runner"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.m2e.launchconfig.sourcepathProvider"/>
 <stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Dlog4j.configuration=${project_loc}/src/main/resources/log4.properties"/>

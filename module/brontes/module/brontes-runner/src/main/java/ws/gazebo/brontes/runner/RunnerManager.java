@@ -1,5 +1,9 @@
 package ws.gazebo.brontes.runner;
 
+import org.apache.log4j.ConsoleAppender;
+import org.apache.log4j.Level;
+import org.apache.log4j.Logger;
+import org.apache.log4j.PatternLayout;
 import org.codehaus.plexus.classworlds.ClassWorld;
 
 public class RunnerManager {
@@ -7,6 +11,12 @@ public class RunnerManager {
 
 	public static void main(String[] args) {
 		// in-place test method
+
+	    Logger rootLogger = Logger.getRootLogger();
+	    rootLogger.setLevel(Level.INFO);
+	    rootLogger.addAppender(new ConsoleAppender(
+	               new PatternLayout("%-6r [%p] %c - %m%n")));
+
 		
 		System.out.println("Base directory: " + System.getProperty("user.dir"));
 		
