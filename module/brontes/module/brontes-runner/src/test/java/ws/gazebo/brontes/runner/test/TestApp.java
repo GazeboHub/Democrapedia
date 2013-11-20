@@ -16,7 +16,7 @@ public class TestApp {
 
 		// FIXME: provide POM as an arg
 		MavenResolverSystem rs = Maven.resolver();
-		// rs.loadPomFromFile("application-test.xml");
+		rs.loadPomFromFile("application-test.xml");
 
 		// This fails consistenly when used in the same classpath with
 		// maven-embedder,
