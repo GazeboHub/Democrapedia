@@ -2,8 +2,6 @@ package ws.gazebo.brontes.runner.test;
 
 import java.io.File;
 
-import org.jboss.shrinkwrap.resolver.api.ConfiguredResolverSystemFactory;
-import org.jboss.shrinkwrap.resolver.api.maven.ConfigurableMavenResolverSystem;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
 import org.jboss.shrinkwrap.resolver.api.maven.MavenResolverSystem;
 
