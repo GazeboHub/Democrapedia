@@ -1,0 +1,49 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<artifactId>brontes-runner</artifactId>
+	<name>Brontes Runner Module</name>
+	<packaging>jar</packaging>
+
+	<parent>
+		<groupId>ws.gazebo.democrapedia</groupId>
+		<artifactId>brontes</artifactId>
+		<version>1.0.1-SNAPSHOT</version>
+		<relativePath>../..</relativePath>
+	</parent>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.apache.maven</groupId>
+			<artifactId>maven-embedder</artifactId>
+			<version>${mavenVersion}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.maven.wagon</groupId>
+			<artifactId>wagon-http</artifactId>
+			<version>2.5</version>
+		</dependency>
+
+
+		<!-- [ can be used with Maven Embedder? ] -->
+		<dependency>
+			<groupId>org.eclipse.aether</groupId>
+			<!-- [ cf. http://dev.eclipse.org/mhonarc/lists/aether-commit/msg00210.html 
+				] -->
+			<artifactId>aether-transport-wagon</artifactId>
+			<version>${aetherVersion}</version>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.plexus</groupId>
+			<artifactId>plexus-classworlds</artifactId>
+			<version>2.5.1</version>
+		</dependency>
+	</dependencies>
+
+
+	<description>The goal of the Brontes Runner module development effort is to define a framework for running an arbitrary Java application directly within a Maven runtime environment, such that Maven's artifact resolution and dependency management behaviors will be available to the application through that runtime environment. 
+
+In this framework, the Maven runtime environment would itself be embedded within a Java application, namely such as Brontes Runner.</description>
+</project>

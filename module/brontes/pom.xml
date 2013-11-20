@@ -17,10 +17,11 @@
 		<mavenVersion>3.1.1</mavenVersion>
 		<wagonVersion>2.5</wagonVersion>
 	</properties>
-	
+
 	<modules>
 		<module>module/brontes-standalone</module>
 		<module>module/brontes-maven-plugin</module>
+		<module>module/brontes-runner</module>
 	</modules>
 
 </project>
