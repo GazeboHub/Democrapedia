@@ -6,7 +6,7 @@
 	<name>Brontes Maven Plugin</name>
 
 	<parent>
-		<groupId>ws.gazebo.democrapedia</groupId>
+		<groupId>ws.gazebo.democrapedia.brontes</groupId>
 		<artifactId>brontes</artifactId>
 		<version>1.0.1-SNAPSHOT</version>
 		<relativePath>../..</relativePath>

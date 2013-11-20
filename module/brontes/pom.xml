@@ -24,4 +24,5 @@
 		<module>module/brontes-runner</module>
 	</modules>
 
+	<groupId>ws.gazebo.democrapedia.brontes</groupId>
 </project>
