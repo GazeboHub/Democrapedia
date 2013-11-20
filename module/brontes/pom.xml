@@ -22,6 +22,7 @@
 		<module>module/brontes-standalone</module>
 		<module>module/brontes-maven-plugin</module>
 		<module>module/brontes-runner</module>
+		<module>module/brontes-catalog</module>
 	</modules>
 
 	<groupId>ws.gazebo.democrapedia.brontes</groupId>
