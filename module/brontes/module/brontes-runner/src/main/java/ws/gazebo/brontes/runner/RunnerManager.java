@@ -9,6 +9,13 @@ public class RunnerManager {
 	public static void main(String[] args) {
 		// in-place test method
 
+		System.out.println("Base directory: " + System.getProperty("user.dir"));
+		
+		System.out.println("Args:");
+		for(String a : args)  {
+			System.out.println("\t" + a);
+		}
+		
 		// cf.
 		// http://stackoverflow.com/questions/5141788/how-to-run-maven-from-java
 		// second answer
@@ -26,7 +33,7 @@ public class RunnerManager {
 		CliRunner runner = new CliRunner(cw, args,
 				System.getProperty("user.dir"), System.out, System.err);
 		Thread runnerThread = new Thread(runner);
-		runnerThread.run();
+		runnerThread.run(); // No output. WTF?
 		
 	}
 }

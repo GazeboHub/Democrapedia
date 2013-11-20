@@ -29,8 +29,10 @@ public class CliRunner implements Runnable {
 
 	@Override
 	public void run() {
-		this.returnValue = this.cliInstance.doMain(args, workingDirectory,
-				stdout, stderr);
+		System.err.println("DEBUG - Start of run");
+		this.returnValue = this.cliInstance.doMain(getArgs(), getWorkingDirectory(),
+				getStdout(), getStderr());
+		System.err.println("DEBUG - End of run");
 	}
 
 	public String[] getArgs() {
