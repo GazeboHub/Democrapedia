@@ -1,14 +1,13 @@
 package ws.gazebo.brontes.runner;
 
-import org.apache.maven.cli.CLIReportingUtils;
-import org.apache.maven.cli.MavenCli;
 import org.codehaus.plexus.classworlds.ClassWorld;
 
 public class RunnerManager {
+	
 
 	public static void main(String[] args) {
 		// in-place test method
-
+		
 		System.out.println("Base directory: " + System.getProperty("user.dir"));
 		
 		System.out.println("Args:");
@@ -28,12 +27,14 @@ public class RunnerManager {
 		// which is more up to date (?)
 		// see also
 		// http://stackoverflow.com/questions/6223476/difference-between-plain-classworlds-and-plexus-classworlds
-		ClassWorld cw = new ClassWorld();
+		// ClassWorld cw = new ClassWorld();
+		ClassWorld cw = null; // ClassWorld needs plexus.core container class realm (?)
 
 		CliRunner runner = new CliRunner(cw, args,
 				System.getProperty("user.dir"), System.out, System.err);
 		Thread runnerThread = new Thread(runner);
 		runnerThread.run(); // No output. WTF?
+		System.out.println("Returned: " + runner.getReturnValue()); // non-zero return ?
 		
 	}
 }

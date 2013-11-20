@@ -36,6 +36,7 @@
 								<argument>arg1</argument>
 								<argument>arg2</argument>
 							</arguments>
+							<classpathScope>test</classpathScope>
 						</configuration>
 					</plugin>
 					<plugin>
