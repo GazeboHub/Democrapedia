@@ -10,3 +10,5 @@
 ## Eclipse
 .settings
 target
+## HSQLDB
+*.lck

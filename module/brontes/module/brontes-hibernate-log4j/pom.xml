@@ -49,10 +49,8 @@
 						<configuration>
 							<classpathScope>test</classpathScope>
 							<mainClass>org.hsqldb.util.MainInvoker</mainClass>
-							<commandlineArgs>org.hsqldb.server.Server "" \
-								${app.test.main.class} \
-								${app.test.main.args}
-							</commandlineArgs>
+							<!--  NOTE: Do not let this lement wrap lines -->
+							<commandlineArgs>org.hsqldb.server.Server --database.0 file:src/test/hsqldb/testdb "" ${app.test.main.class} ${app.test.main.args}</commandlineArgs>
 						</configuration>
 						<goals>
 							<goal>java</goal>
