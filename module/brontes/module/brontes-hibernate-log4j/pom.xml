@@ -31,7 +31,7 @@
 		<dependency>
 			<groupId>org.hsqldb</groupId>
 			<artifactId>hsqldb</artifactId>
-			<version>SNAPSHOT</version>
+			<version>2.3.0</version> <!-- 2.3.0 has sources available, SNAPSHOT does not -->
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -49,8 +49,8 @@
 						<configuration>
 							<classpathScope>test</classpathScope>
 							<mainClass>org.hsqldb.util.MainInvoker</mainClass>
-							<!--  NOTE: Do not let this lement wrap lines -->
-							<commandlineArgs>org.hsqldb.server.Server --database.0 file:src/test/hsqldb/testdb "" ${app.test.main.class} ${app.test.main.args}</commandlineArgs>
+							<!-- NOTE: Do not let this element wrap lines -->
+							<commandlineArgs>${app.test.cmd.args}</commandlineArgs>
 						</configuration>
 						<goals>
 							<goal>java</goal>
@@ -78,7 +78,10 @@
 		</repository>
 	</repositories>
 	<properties>
+		<app.test.hsqldb.args>--database.0 file:src/test/hsqldb/testdb</app.test.hsqldb.args>
 		<app.test.main.class>???</app.test.main.class>
 		<app.test.main.args>???</app.test.main.args>
+		<app.test.cmd.args>org.hsqldb.server.Server ${app.test.hsqldb.args} \
+			"" ${app.test.main.class} ${app.test.main.args}</app.test.cmd.args>
 	</properties>
 </project>
