@@ -23,6 +23,7 @@
 		<module>module/brontes-maven-plugin</module>
 		<module>module/brontes-runner</module>
 		<module>module/brontes-catalog</module>
+		<module>module/brontes-hibernate-log4j</module>
 	</modules>
 
 	<groupId>ws.gazebo.democrapedia.brontes</groupId>
