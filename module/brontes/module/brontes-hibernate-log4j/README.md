@@ -1,5 +1,5 @@
-brotes-hibernate-log4j - a Log4J appender for JDBC via Hibernate ORM
-====================================================================
+brontes-hibernate-log4j - a Log4J appender for JDBC via Hibernate ORM
+=====================================================================
 
 ## Additional Documentation
 
