@@ -18,6 +18,7 @@
 		<wagonVersion>2.5</wagonVersion>
 		<brontes.hibernate.version>3.5.6-Final</brontes.hibernate.version>
 		<brontes.log4j.version>1.2.11</brontes.log4j.version>
+		<brontes.hsqldb.version>2.3.0</brontes.hsqldb.version>
 	</properties>
 
 	<modules>
