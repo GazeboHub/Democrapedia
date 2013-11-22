@@ -12,6 +12,7 @@ import org.apache.commons.vfs2.provider.AbstractFileSystem;
 
 public class ArtifactFileSystem extends AbstractFileSystem {
 
+	
 	protected ArtifactFileSystem(FileName rootName, FileObject parentLayer,
 			FileSystemOptions fileSystemOptions) {
 		super(rootName, parentLayer, fileSystemOptions);
@@ -27,12 +28,11 @@ public class ArtifactFileSystem extends AbstractFileSystem {
 	@Override
 	protected void addCapabilities(Collection<Capability> caps) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 	@Override
-    public void init() throws FileSystemException {
-		
+	public void init() throws FileSystemException {
 	}
 
 }

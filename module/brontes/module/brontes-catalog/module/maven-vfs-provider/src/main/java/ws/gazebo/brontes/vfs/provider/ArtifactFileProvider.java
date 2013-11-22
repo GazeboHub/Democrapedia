@@ -9,9 +9,13 @@ import org.apache.commons.vfs2.FileSystemException;
 import org.apache.commons.vfs2.FileSystemOptions;
 import org.apache.commons.vfs2.provider.AbstractLayeredFileProvider;
 import org.apache.commons.vfs2.provider.FileProvider;
+import org.jboss.shrinkwrap.resolver.api.maven.Maven;
+import org.jboss.shrinkwrap.resolver.api.maven.MavenResolverSystem;
 
 public class ArtifactFileProvider extends AbstractLayeredFileProvider {
 
+	protected static MavenResolverSystem resolverSystem = Maven.resolver();
+	
 	@Override
 	public Collection<Capability> getCapabilities() {
 		// TODO Auto-generated method stub
